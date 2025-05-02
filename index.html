@@ -1,224 +1,1057 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Horizons | Excellence en Escalade Suisse</title>
-    <meta name="description" content="École d'escalade premium en Suisse romande. Formations certifiées, coaching personnalisé et expéditions alpines.">
-    
-    <!-- Preload crítico -->
-    <link rel="preload" href="fonts/ClimbingFont.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="css/main.css" as="style">
-    
-    <!-- Fuentes premium -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    
-    <!-- Favicon dinámico -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧗</text></svg>">
-    
-    <style>
-        /* CSS crítico */
-        :root {
-            --cliff-blue: #1E3D59;
-            --summit-orange: #FF6E40;
-            --glacier-white: #F5F0E1;
-            --rock-gray: #333333;
-            --moss-green: #4CAF50;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, rgba(30,61,89,0.85) 0%, rgba(30,61,89,0.7) 100%), 
-                        url('img/hero-real.jpg') center/cover no-repeat;
-            height: 100vh;
-            min-height: 800px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zen Altitude - Training & Coaching in Switzerland | Formation & Coaching en Suisse</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3b6e3b',secondary:'#8b6d3f'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+[data-lang] {
+display: none;
+}
+[data-lang].active {
+display: block;
+}
+.lang-switch {
+opacity: 0.7;
+transition: all 0.3s;
+border: 1px solid transparent;
+}
+.lang-switch.active {
+opacity: 1;
+background-color: rgba(59, 110, 59, 0.1);
+border-color: rgba(59, 110, 59, 0.2);
+}
+.lang-switch:hover {
+opacity: 1;
+background-color: rgba(59, 110, 59, 0.05);
+}
+.ri-seedling-line::before { content: "\f0a1"; }
+body {
+font-family: 'Montserrat', sans-serif;
+scroll-behavior: smooth;
+}
+.font-handwritten {
+font-family: 'Caveat', cursive;
+}
+.hero-section {
+background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.1) 100%), url('https://readdy.ai/api/search-image?query=Professional%20rock%20climbing%20scene%20with%20detailed%20focus%20on%20technical%20climbing%20gear.%20Close-up%20view%20of%20climber%20wearing%20La%20Sportiva%20climbing%20shoes%2C%20Black%20Diamond%20harness%2C%20and%20equipped%20with%20Petzl%20quickdraws%20and%20carabiners.%20The%20climber%20is%20demonstrating%20precise%20footwork%20on%20limestone%20holds%20while%20clipping%20into%20protection.%20Visible%20chalk%20bag%20and%20perfectly%20organized%20gear%20loops%20on%20harness.%20The%20scene%20shows%20meticulous%20attention%20to%20proper%20gear%20placement%20and%20safety%20equipment.%20Natural%20lighting%20emphasizes%20the%20technical%20details%20of%20the%20climbing%20equipment.%20The%20left%20side%20smoothly%20transitions%20to%20a%20clean%20white%20background%20for%20text%20overlay.&width=1920&height=1080&seq=12345&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.card-hover:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+input[type="checkbox"], input[type="radio"] {
+appearance: none;
+-webkit-appearance: none;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+background-color: #fff;
+border: 2px solid #3b6e3b;
+border-radius: 4px;
+}
+.custom-checkbox::after {
+content: "";
+position: absolute;
+display: none;
+left: 6px;
+top: 2px;
+width: 6px;
+height: 12px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+input[type="checkbox"]:checked + .custom-checkbox {
+background-color: #3b6e3b;
+}
+input[type="checkbox"]:checked + .custom-checkbox::after {
+display: block;
+}
+.custom-radio {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+background-color: #fff;
+border: 2px solid #3b6e3b;
+border-radius: 50%;
+}
+.custom-radio::after {
+content: "";
+position: absolute;
+display: none;
+left: 4px;
+top: 4px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: #3b6e3b;
+}
+input[type="radio"]:checked + .custom-radio::after {
+display: block;
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 40px;
+height: 20px;
+background-color: #ccc;
+border-radius: 20px;
+transition: all 0.3s;
+}
+.custom-switch::after {
+content: "";
+position: absolute;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+background: white;
+top: 2px;
+left: 2px;
+transition: all 0.3s;
+}
+input[type="checkbox"]:checked + .custom-switch {
+background-color: #3b6e3b;
+}
+input[type="checkbox"]:checked + .custom-switch::after {
+transform: translateX(20px);
+}
+.leaf-divider {
+position: relative;
+}
+.leaf-divider::before {
+content: "";
+position: absolute;
+width: 40%;
+height: 1px;
+background-color: #3b6e3b;
+left: 0;
+top: 50%;
+}
+.leaf-divider::after {
+content: "";
+position: absolute;
+width: 40%;
+height: 1px;
+background-color: #3b6e3b;
+right: 0;
+top: 50%;
+}
+.testimonial-card {
+background-color: #f9f7f2;
+border: 1px solid #e0d9c7;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.polaroid {
+background: white;
+padding: 10px 10px 30px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+transform: rotate(-2deg);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
 </head>
-<body>
-    <!-- Cursor personalizado -->
-    <div class="custom-cursor"></div>
-
-    <!-- Preloader animado -->
-    <div id="preloader">
-        <div class="climber-animation">
-            <div class="climber"></div>
-            <div class="mountain"></div>
-        </div>
-    </div>
-
-    <!-- Header flotante -->
-    <header class="floating-header">
-        <div class="container">
-            <a href="/" class="brand">
-                <span class="logo-icon">🧗</span>
-                <span class="logo-text">
-                    <span>VERTICAL</span>
-                    <span>HORIZONS</span>
-                </span>
-            </a>
-            
-            <nav class="dynamic-nav">
-                <ul>
-                    <li><a href="#home" data-hover="Sommet">Accueil</a></li>
-                    <li><a href="#services" data-hover="Offre">Services</a></li>
-                    <li><a href="#expeditions" data-hover="Aventure">Expéditions</a></li>
-                    <li><a href="#team" data-hover="Guides">Équipe</a></li>
-                    <li><a href="#contact" data-hover="Contact">Contact</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header-cta">
-                <a href="#booking" class="btn btn-micro">Réserver</a>
-                <div class="language-switcher">
-                    <span class="active">FR</span>
-                    <span>EN</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section Cinemático -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="title-line">Dépasser vos</span>
-                <span class="title-line">limites verticales</span>
-            </h1>
-            
-            <div class="hero-subtitle">
-                <p>École d'escalade certifiée UIAA • Suisse Romande • Depuis 2012</p>
-            </div>
-            
-            <div class="hero-cta">
-                <a href="#services" class="btn btn-primary">
-                    <span>Explorer nos programmes</span>
-                    <i class="fas fa-arrow-down"></i>
-                </a>
-                <a href="#video" class="video-cta">
-                    <div class="play-icon">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <span>Voir notre film</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="hero-scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Servicios con efecto Parallax -->
-    <section id="services" class="services-parallax">
-        <div class="parallax-background" data-parallax="scroll" data-image-src="img/services-bg.jpg"></div>
-        
-        <div class="services-content">
-            <div class="section-intro">
-                <span class="section-label">Expertise</span>
-                <h2>Notre Approche Unique</h2>
-                <p class="section-description">Méthodologie éprouvée adaptée à chaque niveau</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card" data-service="1">
-                    <div class="service-icon">
-                        <img src="img/icons/ice-axe.svg" alt="Alpinisme" loading="lazy">
-                    </div>
-                    <h3>Alpinisme Technique</h3>
-                    <p>Courses en haute montagne avec guides UIAGM</p>
-                    <ul class="service-features">
-                        <li>Techniques de glace</li>
-                        <li>Gestion du risque</li>
-                        <li>Matériel technique</li>
-                    </ul>
-                </div>
-                
-                <!-- Más servicios... -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Galería Interactiva 3D -->
-    <section id="gallery" class="interactive-gallery">
-        <div class="gallery-container">
-            <div class="gallery-item" data-gallery="1">
-                <img src="img/gallery1.jpg" alt="Formation en groupe" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>Formation Collective</h3>
-                    <button class="gallery-view">Voir +</button>
-                </div>
-            </div>
-            <!-- Más items... -->
-        </div>
-    </section>
-
-    <!-- Footer Premium -->
-    <footer class="premium-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-brand">
-                    <a href="/" class="footer-logo">
-                        <span>VH</span>
-                        <span>Vertical Horizons</span>
-                    </a>
-                    <p>L'excellence en escalade depuis 2012</p>
-                    
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" aria-label="Strava">
-                            <i class="fab fa-strava"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a href="#home">Accueil</a></li>
-                        <li><a href="#services">Programmes</a></li>
-                        <li><a href="#team">Nos Guides</a></li>
-                        <li><a href="#testimonials">Témoignages</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3>Contact Rapide</h3>
-                    <address>
-                        <p><i class="fas fa-map-marker-alt"></i> Chemin de l'Escalade 15, 1000 Lausanne</p>
-                        <p><i class="fas fa-phone"></i> +41 21 123 45 67</p>
-                        <p><i class="fas fa-envelope"></i> contact@verticalhorizons.ch</p>
-                    </address>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2023 Vertical Horizons. Tous droits réservés.</p>
-                <div class="legal-links">
-                    <a href="#">Politique de confidentialité</a>
-                    <a href="#">Conditions générales</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/gsap.min.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <script src="js/main.js" type="module"></script>
+<body class="bg-[#fafafa]">
+<!-- Header -->
+<header class="fixed w-full z-50 bg-transparent transition-all duration-300" id="header">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="flex items-center gap-2">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-seedling-line ri-2x"></i>
+</div>
+<span class="font-['Pacifico'] text-primary text-3xl">Zen Altitude</span>
+</a>
+<div class="flex items-center gap-4 mr-8">
+<button class="lang-switch flex items-center gap-2 px-3 py-1.5 rounded-md" data-lang="fr" aria-label="Switch to French">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-france-fill text-lg"></i>
+</div>
+<span class="text-sm font-medium">FR</span>
+</button>
+<button class="lang-switch flex items-center gap-2 px-3 py-1.5 rounded-md" data-lang="en" aria-label="Switch to English">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-england-fill text-lg"></i>
+</div>
+<span class="text-sm font-medium">EN</span>
+</button>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#accueil" class="text-[#3b6e3b] hover:text-primary font-medium transition-colors">Accueil</a>
+<a href="#services" class="text-[#3b6e3b] hover:text-primary font-medium transition-colors">Services</a>
+<a href="#formations" class="text-[#3b6e3b] hover:text-primary font-medium transition-colors">Formations</a>
+<a href="#calendrier" class="text-[#3b6e3b] hover:text-primary font-medium transition-colors">Calendrier</a>
+<a href="#temoignages" class="text-[#3b6e3b] hover:text-primary font-medium transition-colors">Témoignages</a>
+<a href="#contact" class="text-[#3b6e3b] hover:text-primary font-medium transition-colors">Contact</a>
+</nav>
+<div class="md:hidden flex items-center">
+<button id="mobile-menu-button" class="text-[#3b6e3b] hover:text-primary">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line ri-xl"></i>
+</div>
+</button>
+</div>
+</div>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+<div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+<a href="#accueil" class="text-[#3b6e3b] hover:text-primary font-medium py-2 transition-colors">Accueil</a>
+<a href="#services" class="text-[#3b6e3b] hover:text-primary font-medium py-2 transition-colors">Services</a>
+<a href="#formations" class="text-[#3b6e3b] hover:text-primary font-medium py-2 transition-colors">Formations</a>
+<a href="#calendrier" class="text-[#3b6e3b] hover:text-primary font-medium py-2 transition-colors">Calendrier</a>
+<a href="#temoignages" class="text-[#3b6e3b] hover:text-primary font-medium py-2 transition-colors">Témoignages</a>
+<a href="#contact" class="text-[#3b6e3b] hover:text-primary font-medium py-2 transition-colors">Contact</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="accueil" class="hero-section w-full min-h-screen flex items-center pt-20">
+<div class="container mx-auto px-4 w-full">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 mb-10 md:mb-0">
+<h1 class="text-4xl md:text-6xl font-bold text-primary mb-4">L'escalade au cœur de la nature</h1>
+<p class="font-handwritten text-2xl md:text-3xl text-secondary mb-6">Découvrez votre potentiel, repoussez vos limites</p>
+<p class="text-gray-700 mb-8 max-w-lg">Formations professionnelles, coaching personnalisé et aventures en plein air pour tous les niveaux. Rejoignez notre communauté passionnée d'escalade et vivez des expériences inoubliables.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#services" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all shadow-md whitespace-nowrap">Découvrir nos services</a>
+<a href="#contact" class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-all whitespace-nowrap">Nous contacter</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Nos Services</h2>
+<div class="leaf-divider flex justify-center items-center mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-leaf-line ri-lg"></i>
+</div>
+</div>
+<p class="text-gray-700 max-w-2xl mx-auto">Nous proposons une gamme complète de services d'escalade adaptés à tous les niveaux, de débutant à expert, en intérieur comme en extérieur.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="bg-[#f9f7f2] rounded-lg overflow-hidden shadow-md transition-all duration-300 card-hover">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Indoor%20climbing%20gym%20with%20colorful%20climbing%20walls%2C%20bright%20lighting%2C%20and%20several%20climbers%20practicing%20on%20different%20routes.%20The%20image%20shows%20a%20modern%20facility%20with%20safety%20mats%20below.%20The%20perspective%20captures%20the%20height%20and%20variety%20of%20climbing%20walls.&width=600&height=400&seq=12346&orientation=landscape" alt="Formation Indoor" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+<i class="ri-building-line text-white ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Formation Indoor</h3>
+<p class="text-gray-700 mb-4">Perfectionnez vos techniques d'escalade dans notre salle moderne équipée de voies adaptées à tous les niveaux. Nos instructeurs certifiés vous guideront à chaque étape.</p>
+<a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+En savoir plus
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="bg-[#f9f7f2] rounded-lg overflow-hidden shadow-md transition-all duration-300 card-hover">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Outdoor%20rock%20climbing%20scene%20with%20a%20climber%20scaling%20a%20natural%20cliff%20face.%20Beautiful%20natural%20landscape%20with%20mountains%20and%20forests%20in%20the%20background.%20The%20climber%20is%20secured%20with%20ropes%20and%20equipment%2C%20demonstrating%20proper%20outdoor%20climbing%20technique.&width=600&height=400&seq=12347&orientation=landscape" alt="Aventures Outdoor" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+<i class="ri-mountain-line text-white ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Aventures Outdoor</h3>
+<p class="text-gray-700 mb-4">Vivez l'expérience de l'escalade en pleine nature sur des sites soigneusement sélectionnés. Découvrez la beauté des paysages naturels tout en relevant de nouveaux défis.</p>
+<a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+En savoir plus
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="bg-[#f9f7f2] rounded-lg overflow-hidden shadow-md transition-all duration-300 card-hover">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20climbing%20instructor%20providing%20personalized%20coaching%20to%20a%20climber%2C%20demonstrating%20proper%20technique%20and%20form.%20The%20instructor%20is%20pointing%20out%20hand%20positions%20while%20the%20student%20is%20on%20a%20climbing%20wall.%20The%20image%20shows%20a%20focused%20training%20session%20with%20professional%20guidance.&width=600&height=400&seq=12348&orientation=landscape" alt="Coaching Personnalisé" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+<i class="ri-user-star-line text-white ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold text-primary mb-3">Coaching Personnalisé</h3>
+<p class="text-gray-700 mb-4">Bénéficiez d'un accompagnement sur mesure pour atteindre vos objectifs spécifiques. Nos coachs analyseront votre technique et élaboreront un programme adapté à vos besoins.</p>
+<a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+En savoir plus
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Formations Section -->
+<section id="formations" class="py-20 bg-[#f9f7f2]" style="background-image: url('https://readdy.ai/api/search-image?query=Subtle%20light%20texture%20of%20natural%20stone%20or%20rock%20surface%20with%20minimal%20pattern%2C%20very%20light%20color%20almost%20white%2C%20serving%20as%20a%20perfect%20neutral%20background%20for%20text%20content.%20The%20texture%20should%20be%20extremely%20subtle%20and%20not%20distracting.&width=1920&height=1080&seq=12349&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Nos Formations</h2>
+<div class="leaf-divider flex justify-center items-center mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-award-line ri-lg"></i>
+</div>
+</div>
+<p class="text-gray-700 max-w-2xl mx-auto">Des formations complètes pour maîtriser toutes les techniques d'escalade, de l'assurage aux manipulations multipitch.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Formation 1 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-2/5">
+<img src="https://readdy.ai/api/search-image?query=A%20beginner%20climbing%20class%20with%20an%20instructor%20teaching%20basic%20techniques%20to%20a%20small%20group.%20The%20instructor%20is%20demonstrating%20proper%20hand%20grips%20on%20a%20low%20climbing%20wall.%20Students%20are%20watching%20attentively%20and%20wearing%20safety%20equipment.&width=400&height=300&seq=12350&orientation=landscape" alt="Initiation à l'Escalade" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6 md:w-3/5">
+<h3 class="text-xl font-bold text-primary mb-3">Introduction to Climbing</h3>
+<div class="flex items-center mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-gray-700">2 days (16 hours)</span>
+</div>
+<p class="text-gray-700 mb-4">Discover climbing basics in a safe environment. Learn fundamental techniques, essential equipment usage, and crucial safety rules with our experienced instructors.</p>
+<div class="flex justify-end items-center">
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Register</a>
+</div>
+</div>
+</div>
+<!-- Formation 2 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-2/5">
+<img src="https://readdy.ai/api/search-image?query=A%20climbing%20instructor%20teaching%20advanced%20belaying%20techniques%20to%20a%20small%20group.%20The%20instructor%20is%20demonstrating%20proper%20rope%20handling%20and%20safety%20procedures.%20Students%20are%20practicing%20with%20climbing%20equipment%20and%20harnesses%20in%20a%20professional%20setting.&width=400&height=300&seq=12351&orientation=landscape" alt="Techniques d'Assurage" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6 md:w-3/5">
+<h3 class="text-xl font-bold text-primary mb-3">Belaying Techniques</h3>
+<div class="flex items-center mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-gray-700">1 day (8 hours)</span>
+</div>
+<p class="text-gray-700 mb-4">Master various belaying techniques to ensure optimal safety. Intensive training with hands-on practice using different belay devices and safety systems.</p>
+<div class="flex justify-end items-center">
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Register</a>
+</div>
+</div>
+</div>
+<!-- Formation 3 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-2/5">
+<img src="https://readdy.ai/api/search-image?query=Climbers%20practicing%20on%20a%20multi-pitch%20route%20on%20a%20tall%20cliff%20face.%20The%20image%20shows%20climbers%20at%20different%20stages%20of%20the%20climb%20with%20proper%20rope%20management.%20Beautiful%20natural%20scenery%20surrounds%20the%20climbing%20area%20with%20visible%20anchor%20points%20and%20safety%20systems.&width=400&height=300&seq=12352&orientation=landscape" alt="Multipitch Avancé" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6 md:w-3/5">
+<h3 class="text-xl font-bold text-primary mb-3">Advanced Multipitch</h3>
+<div class="flex items-center mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-gray-700">3 days (24 hours)</span>
+</div>
+<p class="text-gray-700 mb-4">Advanced training for experienced climbers looking to master multi-pitch techniques. Learn anchor management, rappelling, and handling complex climbing situations.</p>
+<div class="flex justify-end items-center">
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Register</a>
+</div>
+</div>
+</div>
+<!-- Formation 4 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-2/5">
+<img src="https://readdy.ai/api/search-image?query=A%20climbing%20instructor%20teaching%20outdoor%20safety%20and%20rescue%20techniques%20in%20a%20natural%20setting.%20The%20instructor%20is%20demonstrating%20how%20to%20assess%20rock%20quality%20and%20environmental%20hazards.%20Students%20are%20taking%20notes%20and%20examining%20climbing%20equipment%20designed%20for%20outdoor%20use.&width=400&height=300&seq=12353&orientation=landscape" alt="Sécurité en Milieu Naturel" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6 md:w-3/5">
+<h3 class="text-xl font-bold text-primary mb-3">Sécurité en Milieu Naturel</h3>
+<div class="flex items-center mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-time-line"></i>
+</div>
+<span class="text-gray-700">2 jours (16 heures)</span>
+</div>
+<p class="text-gray-700 mb-4">Apprenez à évaluer les risques en milieu naturel et à réagir face aux situations d'urgence. Techniques de secours, évaluation des conditions et prise de décision.</p>
+<div class="flex justify-end items-center">
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Register</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Calendrier Section -->
+<section id="calendrier" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Calendrier des Activités</h2>
+<div class="leaf-divider flex justify-center items-center mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-calendar-line ri-lg"></i>
+</div>
+</div>
+<p class="text-gray-700 max-w-2xl mx-auto">Consultez notre calendrier et réservez vos prochaines aventures d'escalade. Activités indoor et outdoor pour tous les niveaux.</p>
+</div>
+<div class="bg-[#f9f7f2] rounded-lg p-6 md:p-8 shadow-md mb-8" style="background-image: url('https://readdy.ai/api/search-image?query=Very%20subtle%20light%20beige%20paper%20texture%20with%20minimal%20grain%2C%20perfect%20for%20a%20background%20that%20suggests%20an%20adventure%20journal%20or%20map.%20The%20texture%20should%20be%20extremely%20light%20and%20not%20interfere%20with%20text%20readability.&width=1200&height=600&seq=12354&orientation=landscape'); background-size: cover;">
+<div class="flex flex-col md:flex-row mb-6 gap-4">
+<div class="md:w-1/3">
+<label class="block text-gray-700 font-medium mb-2">Type d'activité</label>
+<div class="relative">
+<select class="w-full bg-white border border-gray-300 rounded py-2 px-4 pr-8 appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="">Toutes les activités</option>
+<option value="indoor">Escalade Indoor</option>
+<option value="outdoor">Escalade Outdoor</option>
+<option value="formation">Formations</option>
+<option value="coaching">Coaching</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/3">
+<label class="block text-gray-700 font-medium mb-2">Niveau</label>
+<div class="relative">
+<select class="w-full bg-white border border-gray-300 rounded py-2 px-4 pr-8 appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="">Tous les niveaux</option>
+<option value="debutant">Débutant</option>
+<option value="intermediaire">Intermédiaire</option>
+<option value="avance">Avancé</option>
+<option value="expert">Expert</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/3">
+<label class="block text-gray-700 font-medium mb-2">Date</label>
+<input type="date" class="w-full bg-white border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-primary bg-opacity-10">
+<th class="py-3 px-4 text-left text-gray-700 font-semibold border-b border-gray-300">Date</th>
+<th class="py-3 px-4 text-left text-gray-700 font-semibold border-b border-gray-300">Activité</th>
+<th class="py-3 px-4 text-left text-gray-700 font-semibold border-b border-gray-300">Lieu</th>
+<th class="py-3 px-4 text-left text-gray-700 font-semibold border-b border-gray-300">Niveau</th>
+<th class="py-3 px-4 text-left text-gray-700 font-semibold border-b border-gray-300">Places</th>
+<th class="py-3 px-4 text-left text-gray-700 font-semibold border-b border-gray-300">Météo</th>
+<th class="py-3 px-4 text-left text-gray-700 font-semibold border-b border-gray-300">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="hover:bg-gray-50">
+<td class="py-3 px-4 border-b border-gray-200">15 Mai 2025</td>
+<td class="py-3 px-4 border-b border-gray-200">Initiation à l'Escalade</td>
+<td class="py-3 px-4 border-b border-gray-200">Centre Sportif Alpin</td>
+<td class="py-3 px-4 border-b border-gray-200">Débutant</td>
+<td class="py-3 px-4 border-b border-gray-200">8/10</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-sun-line"></i>
+</div>
+</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<a href="#" class="bg-primary text-white px-4 py-1 !rounded-button text-sm font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Réserver</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="py-3 px-4 border-b border-gray-200">18 Mai 2025</td>
+<td class="py-3 px-4 border-b border-gray-200">Techniques d'Assurage</td>
+<td class="py-3 px-4 border-b border-gray-200">Centre Sportif Alpin</td>
+<td class="py-3 px-4 border-b border-gray-200">Intermédiaire</td>
+<td class="py-3 px-4 border-b border-gray-200">5/8</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<div class="w-6 h-6 flex items-center justify-center text-blue-500">
+<i class="ri-cloudy-line"></i>
+</div>
+</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<a href="#" class="bg-primary text-white px-4 py-1 !rounded-button text-sm font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Réserver</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="py-3 px-4 border-b border-gray-200">22-24 Mai 2025</td>
+<td class="py-3 px-4 border-b border-gray-200">Multipitch Avancé</td>
+<td class="py-3 px-4 border-b border-gray-200">Grimsel Pass</td>
+<td class="py-3 px-4 border-b border-gray-200">Avancé</td>
+<td class="py-3 px-4 border-b border-gray-200">3/6</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-sun-line"></i>
+</div>
+</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<a href="#" class="bg-primary text-white px-4 py-1 !rounded-button text-sm font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Réserver</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="py-3 px-4 border-b border-gray-200">29-30 Mai 2025</td>
+<td class="py-3 px-4 border-b border-gray-200">Sécurité en Milieu Naturel</td>
+<td class="py-3 px-4 border-b border-gray-200">Eiger</td>
+<td class="py-3 px-4 border-b border-gray-200">Intermédiaire</td>
+<td class="py-3 px-4 border-b border-gray-200">6/8</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<div class="w-6 h-6 flex items-center justify-center text-gray-500">
+<i class="ri-drizzle-line"></i>
+</div>
+</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<a href="#" class="bg-primary text-white px-4 py-1 !rounded-button text-sm font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Réserver</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="py-3 px-4 border-b border-gray-200">5 Juin 2025</td>
+<td class="py-3 px-4 border-b border-gray-200">Coaching Personnalisé</td>
+<td class="py-3 px-4 border-b border-gray-200">Centre Sportif Alpin</td>
+<td class="py-3 px-4 border-b border-gray-200">Tous niveaux</td>
+<td class="py-3 px-4 border-b border-gray-200">2/3</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-sun-line"></i>
+</div>
+</td>
+<td class="py-3 px-4 border-b border-gray-200">
+<a href="#" class="bg-primary text-white px-4 py-1 !rounded-button text-sm font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Réserver</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="text-center">
+<a href="#" class="inline-flex items-center bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all shadow-md whitespace-nowrap">
+Voir toutes les activités
+<div class="w-5 h-5 flex items-center justify-center ml-2">
+<i class="ri-calendar-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Témoignages Section -->
+<section id="temoignages" class="py-20 bg-[#f9f7f2]">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Témoignages</h2>
+<div class="leaf-divider flex justify-center items-center mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-chat-quote-line ri-lg"></i>
+</div>
+</div>
+<p class="text-gray-700 max-w-2xl mx-auto">Découvrez ce que nos clients disent de leurs expériences avec nos formations et aventures d'escalade.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Témoignage 1 -->
+<div class="testimonial-card p-6 rounded-lg">
+<div class="mb-6 polaroid inline-block">
+<img src="https://readdy.ai/api/search-image?query=Portrait%20of%20a%20smiling%20female%20climber%20in%20her%2030s%20with%20a%20climbing%20helmet%2C%20looking%20confident%20and%20happy%20after%20completing%20a%20climb.%20Natural%20outdoor%20setting%20with%20rock%20formations%20visible%20in%20the%20background.&width=300&height=300&seq=12355&orientation=squarish" alt="Sophie Dupont" class="w-full h-40 object-cover object-top rounded">
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-primary mb-4">
+<i class="ri-double-quotes-l ri-2x"></i>
+</div>
+<p class="text-gray-700 italic mb-6">La formation Multipitch Avancé a complètement transformé ma façon d'aborder les grandes voies. Les instructeurs sont extrêmement compétents et attentifs à chaque détail. Je me sens maintenant beaucoup plus confiante dans mes capacités.</p>
+<div class="flex items-center">
+<div class="flex mr-2">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<span class="font-bold text-gray-800">Sophie Dupont</span>
+</div>
+</div>
+<!-- Témoignage 2 -->
+<div class="testimonial-card p-6 rounded-lg">
+<div class="mb-6 polaroid inline-block">
+<img src="https://readdy.ai/api/search-image?query=Portrait%20of%20a%20male%20climber%20in%20his%2040s%20with%20a%20short%20beard%2C%20smiling%20while%20securing%20climbing%20equipment.%20Hes%20wearing%20technical%20climbing%20clothing%20and%20appears%20experienced%20and%20trustworthy.&width=300&height=300&seq=12356&orientation=squarish" alt="Thomas Leroy" class="w-full h-40 object-cover object-top rounded">
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-primary mb-4">
+<i class="ri-double-quotes-l ri-2x"></i>
+</div>
+<p class="text-gray-700 italic mb-6">Le coaching personnalisé a été exactement ce dont j'avais besoin pour franchir un plateau technique. Mon coach a identifié précisément mes points faibles et m'a proposé des exercices ciblés. En seulement quelques séances, j'ai vu une nette amélioration.</p>
+<div class="flex items-center">
+<div class="flex mr-2">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+<span class="font-bold text-gray-800">Thomas Leroy</span>
+</div>
+</div>
+<!-- Témoignage 3 -->
+<div class="testimonial-card p-6 rounded-lg">
+<div class="mb-6 polaroid inline-block">
+<img src="https://readdy.ai/api/search-image?query=Portrait%20of%20a%20young%20female%20climber%20in%20her%2020s%20with%20a%20ponytail%2C%20looking%20enthusiastic%20and%20energetic.%20Shes%20wearing%20casual%20climbing%20attire%20and%20appears%20to%20be%20a%20beginner%20who%20has%20just%20discovered%20her%20passion%20for%20climbing.&width=300&height=300&seq=12357&orientation=squarish" alt="Camille Martin" class="w-full h-40 object-cover object-top rounded">
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-primary mb-4">
+<i class="ri-double-quotes-l ri-2x"></i>
+</div>
+<p class="text-gray-700 italic mb-6">En tant que débutante, j'étais très nerveuse à l'idée de commencer l'escalade. La formation d'initiation m'a mise à l'aise dès le premier jour. L'ambiance était détendue mais professionnelle, et j'ai appris énormément en peu de temps.</p>
+<div class="flex items-center">
+<div class="flex mr-2">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-500">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<span class="font-bold text-gray-800">Camille Martin</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Contactez-nous</h2>
+<div class="leaf-divider flex justify-center items-center mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+</div>
+<p class="text-gray-700 max-w-2xl mx-auto">Une question sur nos services ? Besoin d'informations supplémentaires ? N'hésitez pas à nous contacter.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="lg:w-1/2">
+<form class="bg-[#f9f7f2] rounded-lg p-8 shadow-md">
+<div class="mb-6">
+<label for="name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
+<input type="text" id="name" class="w-full bg-white border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Votre nom">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+<input type="email" id="email" class="w-full bg-white border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Votre email">
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+<div class="relative">
+<select id="subject" class="w-full bg-white border border-gray-300 rounded py-2 px-4 pr-8 appearance-none focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="">Sélectionnez un sujet</option>
+<option value="formation">Formations</option>
+<option value="coaching">Coaching</option>
+<option value="reservation">Réservation</option>
+<option value="autre">Autre</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+<textarea id="message" rows="5" class="w-full bg-white border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Votre message"></textarea>
+</div>
+<div class="mb-6 flex items-center">
+<input type="checkbox" id="newsletter" class="hidden">
+<label for="newsletter" class="flex items-center cursor-pointer">
+<span class="custom-checkbox mr-2"></span>
+<span class="text-gray-700">S'abonner à la newsletter</span>
+</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all shadow-md whitespace-nowrap">Envoyer le message</button>
+</form>
+</div>
+<div class="lg:w-1/2">
+<div class="bg-[#f9f7f2] rounded-lg p-8 shadow-md h-full">
+<h3 class="text-xl font-bold text-primary mb-6">Informations de Contact</h3>
+<div class="mb-6">
+<div class="flex items-start mb-3">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4 mt-1">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 mb-1">Adresse</h4>
+<p class="text-gray-700">Bergstrasse 15<br>3800 Interlaken, Suisse</p>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex items-start mb-3">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4 mt-1">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 mb-1">Téléphone</h4>
+<p class="text-gray-700">+41 78 123 45 67</p>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex items-start mb-3">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4 mt-1">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 mb-1">Email</h4>
+<p class="text-gray-700">contact@zen-altitude.ch</p>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<div class="flex items-start mb-3">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-4 mt-1">
+<i class="ri-time-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 mb-1">Horaires</h4>
+<p class="text-gray-700">Lundi - Vendredi: 9h - 18h<br>Samedi: 10h - 16h<br>Dimanche: Fermé</p>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-gray-800 mb-3">Suivez-nous</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all">
+<i class="ri-whatsapp-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#3b6e3b] text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+<div>
+<a href="#" class="flex items-center gap-2 mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-seedling-line ri-2x"></i>
+</div>
+<span class="font-['Pacifico'] text-white text-3xl">Zen Altitude</span>
+</a>
+<p class="text-gray-200 mb-6">Votre partenaire d'escalade depuis 2010. Nous proposons des formations professionnelles et des aventures inoubliables pour tous les niveaux.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-white hover:text-gray-300 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-facebook-fill"></i>
+</div>
+</a>
+<a href="#" class="text-white hover:text-gray-300 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line"></i>
+</div>
+</a>
+<a href="#" class="text-white hover:text-gray-300 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-youtube-line"></i>
+</div>
+</a>
+<a href="#" class="text-white hover:text-gray-300 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-linkedin-fill"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6">Liens Rapides</h3>
+<ul class="space-y-3">
+<li><a href="#accueil" class="text-gray-200 hover:text-white transition-colors">Accueil</a></li>
+<li><a href="#services" class="text-gray-200 hover:text-white transition-colors">Services</a></li>
+<li><a href="#formations" class="text-gray-200 hover:text-white transition-colors">Formations</a></li>
+<li><a href="#calendrier" class="text-gray-200 hover:text-white transition-colors">Calendrier</a></li>
+<li><a href="#temoignages" class="text-gray-200 hover:text-white transition-colors">Témoignages</a></li>
+<li><a href="#contact" class="text-gray-200 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6">Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-200 hover:text-white transition-colors">Formation Indoor</a></li>
+<li><a href="#" class="text-gray-200 hover:text-white transition-colors">Aventures Outdoor</a></li>
+<li><a href="#" class="text-gray-200 hover:text-white transition-colors">Coaching Personnalisé</a></li>
+<li><a href="#" class="text-gray-200 hover:text-white transition-colors">Événements d'Entreprise</a></li>
+<li><a href="#" class="text-gray-200 hover:text-white transition-colors">Stages Enfants</a></li>
+<li><a href="#" class="text-gray-200 hover:text-white transition-colors">Voyages d'Escalade</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6">Newsletter</h3>
+<p class="text-gray-200 mb-4">Inscrivez-vous pour recevoir nos dernières actualités et offres spéciales.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Votre email" class="bg-white bg-opacity-20 text-white placeholder-gray-300 border-none rounded-l py-2 px-4 focus:outline-none focus:ring-2 focus:ring-white w-full">
+<button type="submit" class="bg-white text-primary px-4 py-2 !rounded-r-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">S'inscrire</button>
+</div>
+</form>
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 flex items-center justify-center text-white">
+<i class="ri-visa-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-white">
+<i class="ri-mastercard-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-white">
+<i class="ri-paypal-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-white">
+<i class="ri-apple-fill ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-white border-opacity-20 pt-8 text-center">
+<p class="text-gray-300">&copy; 2025 Zen Altitude. Tous droits réservés.</p>
+</div>
+</div>
+</footer>
+<script>
+const translations = {
+en: {
+home: "Home",
+services: "Services",
+training: "Training",
+calendar: "Calendar",
+testimonials: "Testimonials",
+contact: "Contact",
+heroTitle: "Climbing in the Heart of Nature",
+heroSubtitle: "Discover your potential, push your limits",
+heroDescription: "Professional training, personalized coaching and outdoor adventures for all levels. Join our passionate climbing community and experience unforgettable moments.",
+discoverServices: "Discover our services",
+contactUs: "Contact us",
+ourServices: "Our Services",
+servicesDescription: "We offer a complete range of climbing services adapted to all levels, from beginner to expert, both indoor and outdoor.",
+indoorTraining: "Indoor Training",
+indoorDescription: "Perfect your climbing techniques in our modern facility equipped with routes suitable for all levels. Our certified instructors will guide you every step of the way.",
+outdoorAdventures: "Outdoor Adventures",
+outdoorDescription: "Experience climbing in nature at carefully selected sites. Discover the beauty of natural landscapes while taking on new challenges.",
+personalizedCoaching: "Personalized Coaching",
+coachingDescription: "Benefit from tailored support to achieve your specific goals. Our coaches will analyze your technique and develop a program adapted to your needs.",
+learnMore: "Learn more",
+seeAllActivities: "See all activities"
+},
+fr: {
+home: "Accueil",
+services: "Services",
+training: "Formations",
+calendar: "Calendrier",
+testimonials: "Témoignages",
+contact: "Contact",
+heroTitle: "L'escalade au cœur de la nature",
+heroSubtitle: "Découvrez votre potentiel, repoussez vos limites",
+heroDescription: "Formations professionnelles, coaching personnalisé et aventures en plein air pour tous les niveaux. Rejoignez notre communauté passionnée d'escalade et vivez des expériences inoubliables.",
+discoverServices: "Découvrir nos services",
+contactUs: "Nous contacter",
+ourServices: "Nos Services",
+servicesDescription: "Nous proposons une gamme complète de services d'escalade adaptés à tous les niveaux, de débutant à expert, en intérieur comme en extérieur.",
+indoorTraining: "Formation Indoor",
+indoorDescription: "Perfectionnez vos techniques d'escalade dans notre salle moderne équipée de voies adaptées à tous les niveaux. Nos instructeurs certifiés vous guideront à chaque étape.",
+outdoorAdventures: "Aventures Outdoor",
+outdoorDescription: "Vivez l'expérience de l'escalade en pleine nature sur des sites soigneusement sélectionnés. Découvrez la beauté des paysages naturels tout en relevant de nouveaux défis.",
+personalizedCoaching: "Coaching Personnalisé",
+coachingDescription: "Bénéficiez d'un accompagnement sur mesure pour atteindre vos objectifs spécifiques. Nos coachs analyseront votre technique et élaboreront un programme adapté à vos besoins.",
+learnMore: "En savoir plus",
+seeAllActivities: "Voir toutes les activités"
+}
+};
+document.addEventListener('DOMContentLoaded', function() {
+const switchLanguage = (lang) => {
+document.documentElement.lang = lang;
+const texts = translations[lang];
+// Update navigation items
+document.querySelectorAll('nav a').forEach(link => {
+const href = link.getAttribute('href');
+if (href === '#accueil') link.textContent = texts.home;
+if (href === '#services') link.textContent = texts.services;
+if (href === '#formations') link.textContent = texts.training;
+if (href === '#calendrier') link.textContent = texts.calendar;
+if (href === '#temoignages') link.textContent = texts.testimonials;
+if (href === '#contact') link.textContent = texts.contact;
+});
+// Update hero section
+document.querySelector('#accueil h1').textContent = texts.heroTitle;
+document.querySelector('#accueil .font-handwritten').textContent = texts.heroSubtitle;
+document.querySelector('#accueil p:not(.font-handwritten)').textContent = texts.heroDescription;
+document.querySelector('#accueil a[href="#services"]').textContent = texts.discoverServices;
+document.querySelector('#accueil a[href="#contact"]').textContent = texts.contactUs;
+// Update services section
+document.querySelector('#services h2').textContent = texts.ourServices;
+document.querySelector('#services > div > div:first-child > p').textContent = texts.servicesDescription;
+// Update service cards
+const serviceCards = document.querySelectorAll('#services .grid > div');
+if (serviceCards.length >= 3) {
+serviceCards[0].querySelector('h3').textContent = texts.indoorTraining;
+serviceCards[0].querySelector('p').textContent = texts.indoorDescription;
+serviceCards[0].querySelector('a').textContent = texts.learnMore;
+serviceCards[1].querySelector('h3').textContent = texts.outdoorAdventures;
+serviceCards[1].querySelector('p').textContent = texts.outdoorDescription;
+serviceCards[1].querySelector('a').textContent = texts.learnMore;
+serviceCards[2].querySelector('h3').textContent = texts.personalizedCoaching;
+serviceCards[2].querySelector('p').textContent = texts.coachingDescription;
+serviceCards[2].querySelector('a').textContent = texts.learnMore;
+}
+// Update "See all activities" button
+document.querySelector('#calendrier .text-center a').textContent = texts.seeAllActivities;
+document.querySelectorAll('[data-lang]').forEach(el => {
+el.classList.remove('active');
+});
+document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+el.classList.add('active');
+});
+document.querySelectorAll('.lang-switch').forEach(btn => {
+btn.classList.remove('active');
+if (btn.dataset.lang === lang) {
+btn.classList.add('active');
+}
+});
+localStorage.setItem('preferredLanguage', lang);
+};
+document.querySelectorAll('.lang-switch').forEach(btn => {
+btn.addEventListener('click', () => {
+switchLanguage(btn.dataset.lang);
+});
+});
+const preferredLanguage = localStorage.getItem('preferredLanguage') || 'fr';
+switchLanguage(preferredLanguage);
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Header background change on scroll
+const header = document.getElementById('header');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+header.classList.add('bg-white', 'shadow-md');
+header.classList.remove('bg-transparent');
+} else {
+header.classList.remove('bg-white', 'shadow-md');
+header.classList.add('bg-transparent');
+}
+});
+// Initial check for page load
+if (window.scrollY > 50) {
+header.classList.add('bg-white', 'shadow-md');
+header.classList.remove('bg-transparent');
+}
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Custom form elements
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const radios = document.querySelectorAll('input[type="radio"]');
+checkboxes.forEach(checkbox => {
+if (!checkbox.nextElementSibling || !checkbox.nextElementSibling.classList.contains('custom-checkbox') && !checkbox.nextElementSibling.classList.contains('custom-switch')) {
+return;
+}
+checkbox.addEventListener('change', function() {
+// No additional code needed as the CSS handles the visual changes
+});
+});
+radios.forEach(radio => {
+if (!radio.nextElementSibling || !radio.nextElementSibling.classList.contains('custom-radio')) {
+return;
+}
+radio.addEventListener('change', function() {
+// No additional code needed as the CSS handles the visual changes
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80, // Adjust for header height
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
 </body>
 </html>
