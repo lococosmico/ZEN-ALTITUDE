@@ -3,335 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Horizons - École d'escalade en Suisse</title>
-    <meta name="description" content="Vertical Horizons - École d'escalade professionnelle en Suisse romande. Coaching, formations et stages pour tous niveaux.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Vertical Horizons | Excellence en Escalade Suisse</title>
+    <meta name="description" content="École d'escalade premium en Suisse romande. Formations certifiées, coaching personnalisé et expéditions alpines.">
+    
+    <!-- Preload crítico -->
+    <link rel="preload" href="fonts/ClimbingFont.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="css/main.css" as="style">
+    
+    <!-- Fuentes premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Favicon dinámico -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧗</text></svg>">
+    
     <style>
-        /* Estilos críticos para renderizado inicial */
+        /* CSS crítico */
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
+            --cliff-blue: #1E3D59;
+            --summit-orange: #FF6E40;
+            --glacier-white: #F5F0E1;
+            --rock-gray: #333333;
+            --moss-green: #4CAF50;
         }
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top: 5px solid var(--accent);
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(30,61,89,0.85) 0%, rgba(30,61,89,0.7) 100%), 
+                        url('img/hero-real.jpg') center/cover no-repeat;
+            height: 100vh;
+            min-height: 800px;
         }
     </style>
 </head>
 <body>
-    <!-- Preloader -->
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor"></div>
+
+    <!-- Preloader animado -->
     <div id="preloader">
-        <div class="spinner"></div>
+        <div class="climber-animation">
+            <div class="climber"></div>
+            <div class="mountain"></div>
+        </div>
     </div>
 
-    <!-- Header -->
-    <header class="main-header">
+    <!-- Header flotante -->
+    <header class="floating-header">
         <div class="container">
-            <div class="logo-container">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-mountain"></i>
-                    <span>VERTICAL HORIZONS</span>
-                </a>
-            </div>
-
-            <!-- Navegación principal -->
-            <nav class="main-nav">
+            <a href="/" class="brand">
+                <span class="logo-icon">🧗</span>
+                <span class="logo-text">
+                    <span>VERTICAL</span>
+                    <span>HORIZONS</span>
+                </span>
+            </a>
+            
+            <nav class="dynamic-nav">
                 <ul>
-                    <li><a href="#home" class="active">Accueil</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#formations">Formations</a></li>
-                    <li><a href="#gallery">Galerie</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" data-hover="Sommet">Accueil</a></li>
+                    <li><a href="#services" data-hover="Offre">Services</a></li>
+                    <li><a href="#expeditions" data-hover="Aventure">Expéditions</a></li>
+                    <li><a href="#team" data-hover="Guides">Équipe</a></li>
+                    <li><a href="#contact" data-hover="Contact">Contact</a></li>
                 </ul>
             </nav>
-
-            <!-- Selector de idioma -->
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="fr">FR</button>
-                <button class="lang-btn" data-lang="en">EN</button>
+            
+            <div class="header-cta">
+                <a href="#booking" class="btn btn-micro">Réserver</a>
+                <div class="language-switcher">
+                    <span class="active">FR</span>
+                    <span>EN</span>
+                </div>
             </div>
-
-            <!-- Menú móvil -->
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section Cinemático -->
     <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 data-translate="hero.title">L'escalade à son meilleur niveau</h1>
-                <p class="subtitle" data-translate="hero.subtitle">Dépassement. Passion. Professionnalisme.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary" data-translate="hero.cta1">Réserver un cours</a>
-                    <a href="#services" class="btn btn-secondary" data-translate="hero.cta2">Nos services</a>
-                </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Dépasser vos</span>
+                <span class="title-line">limites verticales</span>
+            </h1>
+            
+            <div class="hero-subtitle">
+                <p>École d'escalade certifiée UIAA • Suisse Romande • Depuis 2012</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 data-translate="services.title">Nos Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mountain"></i>
-                    </div>
-                    <h3 data-translate="services.1.title">Escalade Outdoor</h3>
-                    <p data-translate="services.1.desc">Découvrez les plus belles falaises de Suisse romande avec nos guides certifiés.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 data-translate="services.2.title">Escalade Indoor</h3>
-                    <p data-translate="services.2.desc">Perfectionnez votre technique dans notre salle équipée des dernières technologies.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 data-translate="services.3.title">Coaching Personnalisé</h3>
-                    <p data-translate="services.3.desc">Programmes sur mesure pour atteindre vos objectifs spécifiques.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formaciones -->
-    <section id="formations" class="formations-section">
-        <div class="container">
-            <h2 data-translate="formations.title">Nos Formations</h2>
-            <div class="formations-grid">
-                <div class="formation-card">
-                    <img src="img/formation-beginner.jpg" alt="Formation débutant">
-                    <div class="formation-content">
-                        <h3 data-translate="formations.1.title">Initiation</h3>
-                        <p data-translate="formations.1.desc">Apprenez les bases de l'escalade en toute sécurité.</p>
-                        <a href="#" class="btn btn-small" data-translate="formations.cta">En savoir plus</a>
-                    </div>
-                </div>
-                
-                <div class="formation-card">
-                    <img src="img/formation-intermediate.jpg" alt="Formation intermédiaire">
-                    <div class="formation-content">
-                        <h3 data-translate="formations.2.title">Perfectionnement</h3>
-                        <p data-translate="formations.2.desc">Améliorez votre technique et apprenez les manoeuvres avancées.</p>
-                        <a href="#" class="btn btn-small" data-translate="formations.cta">En savoir plus</a>
-                    </div>
-                </div>
-                
-                <div class="formation-card">
-                    <img src="img/formation-advanced.jpg" alt="Formation avancée">
-                    <div class="formation-content">
-                        <h3 data-translate="formations.3.title">Expert</h3>
-                        <p data-translate="formations.3.desc">Techniques de pointe pour grimpeurs expérimentés.</p>
-                        <a href="#" class="btn btn-small" data-translate="formations.cta">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galería -->
-    <section id="gallery" class="gallery-section">
-        <div class="container">
-            <h2 data-translate="gallery.title">Notre Univers</h2>
-            <div class="gallery-grid">
-                <a href="img/gallery1-large.jpg" class="gallery-item">
-                    <img src="img/gallery1-thumb.jpg" alt="Escalade en montagne">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+            
+            <div class="hero-cta">
+                <a href="#services" class="btn btn-primary">
+                    <span>Explorer nos programmes</span>
+                    <i class="fas fa-arrow-down"></i>
                 </a>
-                <!-- Más elementos de galería -->
+                <a href="#video" class="video-cta">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span>Voir notre film</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre nosotros -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <h2 data-translate="about.title">Notre Philosophie</h2>
-                <p data-translate="about.text1">Vertical Horizons est né de la passion pour l'escalade et du désir de partager cette expérience unique.</p>
-                <p data-translate="about.text2">Nos instructeurs, tous certifiés et expérimentés, vous accompagnent dans votre progression en toute sécurité.</p>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">15+</span>
-                        <span data-translate="about.stat1">Années d'expérience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span data-translate="about.stat2">Elèves formés</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span data-translate="about.stat3">Satisfaction</span>
-                    </div>
-                </div>
+    <!-- Sección de Servicios con efecto Parallax -->
+    <section id="services" class="services-parallax">
+        <div class="parallax-background" data-parallax="scroll" data-image-src="img/services-bg.jpg"></div>
+        
+        <div class="services-content">
+            <div class="section-intro">
+                <span class="section-label">Expertise</span>
+                <h2>Notre Approche Unique</h2>
+                <p class="section-description">Méthodologie éprouvée adaptée à chaque niveau</p>
             </div>
-            <div class="about-image">
-                <img src="img/about.jpg" alt="Équipe Vertical Horizons">
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 data-translate="contact.title">Contactez-nous</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Bergstrasse 15<br>3800 Interlaken, Suisse</p>
+            
+            <div class="services-grid">
+                <div class="service-card" data-service="1">
+                    <div class="service-icon">
+                        <img src="img/icons/ice-axe.svg" alt="Alpinisme" loading="lazy">
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+41 78 123 45 67</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>contact@verticalhorizons.ch</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder=" " required>
-                        <label for="name" data-translate="contact.form.name">Nom complet</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder=" " required>
-                        <label for="email" data-translate="contact.form.email">Email</label>
-                    </div>
-                    <div class="form-group">
-                        <select id="subject" required>
-                            <option value="" disabled selected></option>
-                            <option value="info" data-translate="contact.form.option1">Demande d'information</option>
-                            <option value="booking" data-translate="contact.form.option2">Réservation</option>
-                            <option value="other" data-translate="contact.form.option3">Autre</option>
-                        </select>
-                        <label for="subject" data-translate="contact.form.subject">Sujet</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" rows="4" placeholder=" " required></textarea>
-                        <label for="message" data-translate="contact.form.message">Message</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary" data-translate="contact.form.submit">Envoyer</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 data-translate="footer.about">Vertical Horizons</h3>
-                    <p data-translate="footer.desc">École d'escalade professionnelle en Suisse romande depuis 2010.</p>
-                </div>
-                <div class="footer-col">
-                    <h3 data-translate="footer.links">Liens rapides</h3>
-                    <ul>
-                        <li><a href="#home" data-translate="footer.link1">Accueil</a></li>
-                        <li><a href="#services" data-translate="footer.link2">Services</a></li>
-                        <li><a href="#formations" data-translate="footer.link3">Formations</a></li>
-                        <li><a href="#contact" data-translate="footer.link4">Contact</a></li>
+                    <h3>Alpinisme Technique</h3>
+                    <p>Courses en haute montagne avec guides UIAGM</p>
+                    <ul class="service-features">
+                        <li>Techniques de glace</li>
+                        <li>Gestion du risque</li>
+                        <li>Matériel technique</li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3 data-translate="footer.contact">Contact</h3>
-                    <p>contact@verticalhorizons.ch<br>+41 78 123 45 67</p>
+                
+                <!-- Más servicios... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Interactiva 3D -->
+    <section id="gallery" class="interactive-gallery">
+        <div class="gallery-container">
+            <div class="gallery-item" data-gallery="1">
+                <img src="img/gallery1.jpg" alt="Formation en groupe" loading="lazy">
+                <div class="gallery-overlay">
+                    <h3>Formation Collective</h3>
+                    <button class="gallery-view">Voir +</button>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Vertical Horizons. <span data-translate="footer.rights">Tous droits réservés</span>.</p>
+            <!-- Más items... -->
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="premium-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">
+                        <span>VH</span>
+                        <span>Vertical Horizons</span>
+                    </a>
+                    <p>L'excellence en escalade depuis 2012</p>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" aria-label="Strava">
+                            <i class="fab fa-strava"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#services">Programmes</a></li>
+                        <li><a href="#team">Nos Guides</a></li>
+                        <li><a href="#testimonials">Témoignages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Rapide</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Chemin de l'Escalade 15, 1000 Lausanne</p>
+                        <p><i class="fas fa-phone"></i> +41 21 123 45 67</p>
+                        <p><i class="fas fa-envelope"></i> contact@verticalhorizons.ch</p>
+                    </address>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 Vertical Horizons. Tous droits réservés.</p>
+                <div class="legal-links">
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions générales</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/scripts.js"></script>
-    <script>
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-            
-            // Año actual en el footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-
-        // Menú móvil
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.toggle('active');
-        });
-
-        // Smooth scrolling para enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
