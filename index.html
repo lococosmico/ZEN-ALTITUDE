@@ -287,12 +287,22 @@ margin: 0;
 </div>
 <h3 class="text-xl font-bold text-primary mb-3">Formation Indoor</h3>
 <p class="text-gray-700 mb-4">Perfectionnez vos techniques d'escalade dans notre salle moderne équipée de voies adaptées à tous les niveaux. Nos instructeurs certifiés vous guideront à chaque étape.</p>
-<a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
-En savoir plus
-<div class="w-5 h-5 flex items-center justify-center ml-1">
-<i class="ri-arrow-right-line"></i>
-</div>
-</a>
+<a href="#" class="inline-flex items-center text-primary font-medium hover:underline en-savoir-plus-btn">
+    En savoir plus
+    <div class="w-5 h-5 flex items-center justify-center ml-1">
+      <i class="ri-arrow-right-line"></i>
+    </div>
+  </a>
+  <!-- Añade JUSTO DESPUÉS este div -->
+  <div class="hidden en-savoir-plus-content px-6 pb-4">
+    <h4 class="font-bold mb-2">Détails complets :</h4>
+    <ul class="list-disc pl-5 space-y-1 text-gray-600">
+      <li>Durée : 2 heures</li>
+      <li>Matériel fourni</li>
+      <li>Maximum 8 participants</li>
+      <li>Certificat inclus</li>
+    </ul>
+  </div>    
 </div>
 </div>
 <!-- Service 2 -->
@@ -1079,5 +1089,19 @@ behavior: 'smooth'
 });
 });
 </script>
+<script>
+    // Acordeones para "En savoir plus"
+    document.querySelectorAll('.en-savoir-plus-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const content = this.closest('.card-hover').querySelector('.en-savoir-plus-content');
+        const icon = this.querySelector('i');
+        
+        content.classList.toggle('hidden');
+        icon.classList.toggle('ri-arrow-right-line');
+        icon.classList.toggle('ri-arrow-down-line');
+      });
+    });
+  </script>
 </body>
 </html>

@@ -186,3 +186,11 @@ h2::after {
     z-index: 9999;
     transform: translate(-50%, -50%);
 }
+.en-savoir-plus-content {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .en-savoir-plus-content:not(.hidden) {
+    max-height: 300px;
+  }
