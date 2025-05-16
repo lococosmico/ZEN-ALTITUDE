@@ -1,71 +1,392 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vertical Horizons</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Horizons – Escalade & Formations personnalisées | Climbing & Custom Trainings</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4B7F52',   // Verde principal
+            secondary: '#A68A64',  // Ocre
+            accent: '#6B8F71',     // Verde claro
+            earth: '#8B5A2B'       // Marrón tierra
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <style>
+    :where([class^="ri-"])::before { content: "\f3c2"; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .hero-section {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%), url('URL_DE_TU_IMAGEN_DE_FONDO_AQUÍ');
+      background-size: cover;
+      background-position: center;
+    }
+    .activity-card {
+      transition: all 0.3s ease;
+    }
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Vertical Horizons – Escalade & Formations personnalisées</h1>
-        <p>🇫🇷 Bienvenue chez Vertical Horizons – formations et coaching d'escalade, indoor et outdoor, en Suisse et à l'étranger.</p>
-        <p>🇬🇧 Welcome to Vertical Horizons – indoor & outdoor climbing training and coaching, in Switzerland and abroad.</p>
-    </header>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-3xl font-['Pacifico'] text-primary">Vertical Horizons</a>
+      <div class="flex items-center gap-8">
+        <div class="flex items-center bg-gray-100/80 rounded-full p-1">
+          <button type="button" class="language-btn active px-4 py-2 rounded-full bg-white text-primary font-medium shadow-sm flex items-center gap-2" data-lang="fr">
+            <span class="ri-flag-line"></span>FR
+          </button>
+          <button type="button" class="language-btn px-4 py-2 rounded-full text-gray-600 font-medium hover:text-primary flex items-center gap-2" data-lang="en">
+            <span class="ri-flag-line"></span>EN
+          </button>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="#about" class="text-gray-700 hover:text-primary transition-colors">À propos / About</a>
+          <a href="#activities" class="text-gray-700 hover:text-primary transition-colors">Activités / Activities</a>
+          <a href="#booking" class="text-gray-700 hover:text-primary transition-colors">Réservation / Booking</a>
+          <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+        </nav>
+        <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobileMenuButton">
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobileMenu">
+      <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+        <a href="#about" class="py-2 text-gray-700 hover:text-primary transition-colors">À propos / About</a>
+        <a href="#activities" class="py-2 text-gray-700 hover:text-primary transition-colors">Activités / Activities</a>
+        <a href="#booking" class="py-2 text-gray-700 hover:text-primary transition-colors">Réservation / Booking</a>
+        <a href="#contact" class="py-2 text-gray-700 hover:text-primary transition-colors">Contact</a>
+      </div>
+    </div>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="#formations">Formations</a></li>
-            <li><a href="#coaching">Coaching privé</a></li>
-            <li><a href="#voyages">Voyages</a></li>
-            <li><a href="#contact">Contact & Réservations</a></li>
-        </ul>
-    </nav>
+  <!-- Hero Section -->
+  <section class="hero-section min-h-[600px] flex items-center">
+    <div class="container mx-auto px-4 py-16 w-full">
+      <div class="max-w-2xl">
+        <div class="mb-8 language-content fr-content">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Explorez vos horizons verticaux</h1>
+          <p class="text-lg md:text-xl text-gray-700 mb-8">Chez Vertical Horizon, nous vous accompagnons pour explorer vos propres horizons verticaux, en toute sécurité et en harmonie avec la nature.</p>
+          <p class="text-lg text-gray-700 mb-8">Escalade indoor ou en falaise, yoga, retraites bien-être, formations techniques : chaque activité est pensée pour favoriser l'équilibre entre le corps, l'esprit et l'environnement.</p>
+        </div>
+        <div class="mb-8 language-content en-content hidden">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Explore your vertical horizons</h1>
+          <p class="text-lg md:text-xl text-gray-700 mb-8">At Vertical Horizon, we guide you to explore your own vertical horizons, safely and in harmony with nature.</p>
+          <p class="text-lg text-gray-700 mb-8">Indoor or outdoor climbing, yoga, wellness retreats, technical courses — each activity is designed to balance body, mind, and environment.</p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="#activities" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-green-600 transition-colors whitespace-nowrap">
+            <span class="language-content fr-content">Découvrir nos activités</span>
+            <span class="language-content en-content hidden">Discover our activities</span>
+          </a>
+          <a href="#contact" class="bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+            <span class="language-content fr-content">Nous contacter</span>
+            <span class="language-content en-content hidden">Contact us</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main>
-        <section id="formations">
-            <h2>🧗 Formations</h2>
-            <ul>
-                <li>🇫🇷 Initiation à l’escalade – indoor/outdoor<br><strong>Prix : CHF 120.- par personne (min. 4 personnes)</strong></li>
-                <li>🇬🇧 Climbing initiation – indoor/outdoor<br><strong>Price: CHF 120 per person (min. 4 people)</strong></li>
-                <li>Autonomie en moulinette, en tête, manip de corde, grandes voies</li>
-            </ul>
-        </section>
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <img src="URL_DE_TU_FOTO_DE_PERFIL_AQUÍ" alt="Guillermo" class="rounded-lg shadow-lg object-cover w-full max-w-md mx-auto h-[500px] object-top">
+        </div>
+        <div class="md:w-1/2">
+          <div class="mb-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">
+              <span class="language-content fr-content">À propos</span>
+              <span class="language-content en-content hidden">About</span>
+            </h2>
+            <div class="w-20 h-1 bg-primary"></div>
+          </div>
+          <div class="language-content fr-content">
+            <p class="text-gray-700 mb-4">Je suis Guillermo, professeur d'escalade diplômé (brevet fédéral) et enseignant de yoga, passionné par le mouvement et le développement personnel.</p>
+            <p class="text-gray-700 mb-4">Depuis plusieurs années, j'encadre enfants, ados et adultes, en salle comme en extérieur.</p>
+            <p class="text-gray-700 mb-4">Mon approche : une progression technique associée à une recherche d'harmonie entre le corps, l'esprit et la nature.</p>
+            <p class="text-gray-700 mb-4">Je propose des expériences authentiques, pour tous les niveaux, dans le respect du rythme de chacun.</p>
+          </div>
+          <div class="language-content en-content hidden">
+            <p class="text-gray-700 mb-4">I'm Guillermo, certified climbing instructor (federal diploma) and yoga teacher, passionate about movement and personal growth.</p>
+            <p class="text-gray-700 mb-4">For several years, I have been guiding children, teens, and adults, both indoors and in the outdoors.</p>
+            <p class="text-gray-700 mb-4">My approach combines technical progress with a deep connection between body, mind, and nature.</p>
+            <p class="text-gray-700 mb-4">I offer authentic experiences for all levels, respecting each person's rhythm and goals.</p>
+          </div>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <div class="flex items-center gap-2">
+              <div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full text-primary">
+                <i class="ri-medal-line ri-lg"></i>
+              </div>
+              <span class="text-gray-700 font-medium">
+                <span class="language-content fr-content">Brevet fédéral</span>
+                <span class="language-content en-content hidden">Federal diploma</span>
+              </span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full text-primary">
+                <i class="ri-user-heart-line ri-lg"></i>
+              </div>
+              <span class="text-gray-700 font-medium">
+                <span class="language-content fr-content">Professeur de yoga</span>
+                <span class="language-content en-content hidden">Yoga teacher</span>
+              </span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full text-primary">
+                <i class="ri-time-line ri-lg"></i>
+              </div>
+              <span class="text-gray-700 font-medium">
+                <span class="language-content fr-content">+10 ans d'expérience</span>
+                <span class="language-content en-content hidden">+10 years experience</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section id="coaching">
-            <h2>🎯 Coaching privé</h2>
-            <p>🇫🇷 Suivi d’entraînement indoor personnalisé + sorties outdoor encadrées</p>
-            <p>🇬🇧 Personalized indoor training & guided outdoor climbs</p>
-        </section>
+  <!-- Activities Section -->
+  <section id="activities" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">
+          <span class="language-content fr-content">Nos Activités</span>
+          <span class="language-content en-content hidden">Our Activities</span>
+        </h2>
+        <div class="w-20 h-1 bg-primary mx-auto"></div>
+      </div>
+      
+      <!-- Activity Categories Tabs -->
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex p-1 bg-white rounded-full shadow-sm">
+          <button class="activity-tab active px-6 py-2 rounded-full bg-primary text-white font-medium whitespace-nowrap" data-target="indoor">
+            <i class="ri-building-line mr-2"></i>
+            <span class="language-content fr-content">Escalade Indoor</span>
+            <span class="language-content en-content hidden">Indoor Climbing</span>
+          </button>
+          <button class="activity-tab px-6 py-2 rounded-full text-gray-700 font-medium whitespace-nowrap" data-target="outdoor">
+            <i class="ri-landscape-line mr-2"></i>
+            <span class="language-content fr-content">Escalade Outdoor</span>
+            <span class="language-content en-content hidden">Outdoor Climbing</span>
+          </button>
+          <button class="activity-tab px-6 py-2 rounded-full text-gray-700 font-medium whitespace-nowrap" data-target="business">
+            <i class="ri-briefcase-line mr-2"></i>
+            <span class="language-content fr-content">Entreprises</span>
+            <span class="language-content en-content hidden">Companies</span>
+          </button>
+        </div>
+      </div>
 
-        <section id="voyages">
-            <h2>🌍 Voyages & Stages escalade</h2>
-            <p>🇫🇷 Région : Suisse et étranger (Grèce, Turquie, France…) – 3 à 5 jours</p>
-            <p>🇬🇧 Region: Switzerland and abroad (Greece, Turkey, France...) – 3 to 5 days</p>
-        </section>
+      <!-- Indoor Activities -->
+      <div class="activity-content" id="indoor-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Activity Card 1 -->
+          <div class="activity-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img src="URL_IMAGEN_ACTIVIDAD_1" alt="Formation moulinette" class="w-full h-full object-cover object-top">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <span class="language-content fr-content">Formation moulinette</span>
+                <span class="language-content en-content hidden">Top-rope training</span>
+              </h3>
+              <p class="text-gray-700 mb-4">
+                <span class="language-content fr-content">Apprenez les bases en salle avec des instructeurs certifiés. Séances adaptées aux débutants.</span>
+                <span class="language-content en-content hidden">Learn the basics indoors with certified instructors. Sessions tailored for beginners.</span>
+              </p>
+              <div class="flex justify-between items-center">
+                <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-green-600 transition-colors whitespace-nowrap">
+                  <span class="language-content fr-content">Réserver</span>
+                  <span class="language-content en-content hidden">Book now</span>
+                </button>
+              </div>
+            </div>
+          </div>
 
-        <section id="contact">
-            <h2>📬 Contact & Réservations</h2>
-            <form>
-                <label for="name">Nom / Name:</label><br>
-                <input type="text" id="name" name="name"><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message"></textarea><br>
-                <button type="submit">Envoyer / Send</button>
-            </form>
-            <p>🇫🇷 Pour toute demande spécifique, n’hésitez pas à nous contacter.</p>
-            <p>🇬🇧 For any special request, feel free to reach out.</p>
-        </section>
-    </main>
+          <!-- Activity Card 2 -->
+          <div class="activity-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img src="URL_IMAGEN_ACTIVIDAD_2" alt="Formation en tête" class="w-full h-full object-cover object-top">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <span class="language-content fr-content">Formation en tête</span>
+                <span class="language-content en-content hidden">Lead climbing training</span>
+              </h3>
+              <p class="text-gray-700 mb-4">
+                <span class="language-content fr-content">Techniques avancées pour grimpeurs intermédiaires. Sécurité et progression garanties.</span>
+                <span class="language-content en-content hidden">Advanced techniques for intermediate climbers. Safety and progress guaranteed.</span>
+              </p>
+              <div class="flex justify-between items-center">
+                <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-green-600 transition-colors whitespace-nowrap">
+                  <span class="language-content fr-content">Réserver</span>
+                  <span class="language-content en-content hidden">Book now</span>
+                </button>
+              </div>
+            </div>
+          </div>
 
-    <footer>
-        <p>Suivez-nous sur Instagram et Facebook</p>
-        <ul>
-            <li><a href="https://your-instagram.com" target="_blank">Instagram</a></li>
-            <li><a href="https://your-facebook.com" target="_blank">Facebook</a></li>
-        </ul>
-    </footer>
+          <!-- Añade más tarjetas de actividades aquí con la misma estructura -->
+        </div>
+      </div>
+
+      <!-- Outdoor Activities -->
+      <div class="activity-content hidden" id="outdoor-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Activity Card 1 -->
+          <div class="activity-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img src="URL_IMAGEN_ACTIVIDAD_OUTDOOR_1" alt="Découverte" class="w-full h-full object-cover object-top">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <span class="language-content fr-content">Découverte falaise</span>
+                <span class="language-content en-content hidden">Rock discovery</span>
+              </h3>
+              <p class="text-gray-700 mb-4">
+                <span class="language-content fr-content">Initiation sur sites naturels sélectionnés. Matériel fourni.</span>
+                <span class="language-content en-content hidden">Initiation on selected natural sites. Equipment provided.</span>
+              </p>
+              <div class="flex justify-between items-center">
+                <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-green-600 transition-colors whitespace-nowrap">
+                  <span class="language-content fr-content">Réserver</span>
+                  <span class="language-content en-content hidden">Book now</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Añade más tarjetas outdoor aquí -->
+        </div>
+      </div>
+
+      <!-- Business Activities -->
+      <div class="activity-content hidden" id="business-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Activity Card 1 -->
+          <div class="activity-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img src="URL_IMAGEN_ACTIVIDAD_BUSINESS_1" alt="Team building" class="w-full h-full object-cover object-top">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <span class="language-content fr-content">Team building</span>
+                <span class="language-content en-content hidden">Corporate events</span>
+              </h3>
+              <p class="text-gray-700 mb-4">
+                <span class="language-content fr-content">Activités sur mesure pour renforcer la cohésion d'équipe en milieu naturel.</span>
+                <span class="language-content en-content hidden">Tailored activities to strengthen team cohesion in natural settings.</span>
+              </p>
+              <div class="flex justify-between items-center">
+                <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-green-600 transition-colors whitespace-nowrap">
+                  <span class="language-content fr-content">Contactez-nous</span>
+                  <span class="language-content en-content hidden">Contact us</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section Simplificada -->
+  <section id="booking" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">
+          <span class="language-content fr-content">Réservation</span>
+          <span class="language-content en-content hidden">Booking</span>
+        </h2>
+        <div class="w-20 h-1 bg-primary mx-auto"></div>
+      </div>
+      <div class="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-md p-8 text-center">
+        <div class="language-content fr-content">
+          <p class="text-gray-700 mb-6">Votre réservation sera confirmée par email après accord. Pas de paiement en ligne nécessaire.</p>
+          <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-green-600 transition-colors inline-block">
+            Nous contacter
+          </a>
+        </div>
+        <div class="language-content en-content hidden">
+          <p class="text-gray-700 mb-6">Your booking will be confirmed via email. No online payment required.</p>
+          <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-green-600 transition-colors inline-block">
+            Contact us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (se mantiene igual que en tu código original) -->
+  <!-- Footer (se mantiene igual que en tu código original) -->
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Activity tabs
+      const activityTabs = document.querySelectorAll('.activity-tab');
+      const activityContents = document.querySelectorAll('.activity-content');
+      activityTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          activityTabs.forEach(t => t.classList.remove('active', 'bg-primary', 'text-white'));
+          this.classList.add('active', 'bg-primary', 'text-white');
+          activityContents.forEach(content => content.classList.add('hidden'));
+          document.getElementById(`${this.getAttribute('data-target')}-content`).classList.remove('hidden');
+        });
+      });
+
+      // Language toggle
+      const languageButtons = document.querySelectorAll('.language-btn');
+      languageButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          languageButtons.forEach(btn => btn.classList.remove('active', 'bg-white', 'text-primary', 'shadow-sm'));
+          this.classList.add('active', 'bg-white', 'text-primary', 'shadow-sm');
+          document.querySelectorAll(this.dataset.lang === 'en' ? '.fr-content' : '.en-content').forEach(el => el.classList.add('hidden'));
+          document.querySelectorAll(this.dataset.lang === 'en' ? '.en-content' : '.fr-content').forEach(el => el.classList.remove('hidden'));
+        });
+      });
+    });
+  </script>
 </body>
 </html>
