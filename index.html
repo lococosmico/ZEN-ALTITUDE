@@ -44,6 +44,39 @@
       rel="stylesheet"
     />
     <style>
+       <style>
+  /* Estilo para las tarjetas con fondo semitransparente */
+  .activity-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85); /* Fondo blanco con 85% de opacidad */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px); /* Efecto de desenfoque para mejor legibilidad */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+  }
+
+  .activity-card .content-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .activity-card .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+  }
+
+  .activity-card:hover {
+    background: rgba(255, 255, 255, 0.95); /* Más opaco al hacer hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  }
+</style>
+      
       :where([class^="ri-"])::before { content: "\f3c2"; }
       body {
       font-family: 'Montserrat', sans-serif;
@@ -634,7 +667,7 @@
             >
               <div class="h-48 overflow-hidden">
                 <img
-                 src="img/p1.jpg"
+                 src="img/moulinette outdoor.jpg"
                  alt="Formation moulinette outdoor"
                  class="w-full h-full object-cover object-top"
                 />
