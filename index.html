@@ -44,39 +44,6 @@
       rel="stylesheet"
     />
     <style>
-       <style>
-  /* Estilo para las tarjetas con fondo semitransparente */
-  .activity-card {
-    position: relative;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.85); /* Fondo blanco con 85% de opacidad */
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px); /* Efecto de desenfoque para mejor legibilidad */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
-  }
-
-  .activity-card .content-wrapper {
-    position: relative;
-    z-index: 2;
-  }
-
-  .activity-card .image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
-    z-index: 1;
-  }
-
-  .activity-card:hover {
-    background: rgba(255, 255, 255, 0.95); /* Más opaco al hacer hover */
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-  }
-</style>
-      
       :where([class^="ri-"])::before { content: "\f3c2"; }
       body {
       font-family: 'Montserrat', sans-serif;
@@ -356,435 +323,752 @@
         </div>
       </div>
     </section>
-  <!-- Activities Section -->
-<section id="activities" class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <!-- ... (encabezado y pestañas igual que antes) ... -->
-
-    <!-- Indoor Activities - TODAS LAS TARJETAS MODIFICADAS -->
-    <div class="activity-content" id="indoor-content">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Tarjeta 1 Indoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Formation moulinette" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
+    <!-- Activities Section -->
+    <section id="activities" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-2">
+            <span class="language-content fr-content">Nos Activités</span>
+            <span class="language-content en-content hidden"
+              >Our Activities</span
+            >
+          </h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        <!-- Activity Categories Tabs -->
+        <div class="flex justify-center mb-10">
+          <div class="inline-flex p-1 bg-white rounded-full shadow-sm">
+            <button
+              class="activity-tab active px-6 py-2 rounded-full bg-primary text-white font-medium whitespace-nowrap"
+              data-target="indoor"
+            >
+              <i class="ri-building-line mr-2"></i>
+              <span class="language-content fr-content">Escalade Indoor</span>
+              <span class="language-content en-content hidden"
+                >Indoor Climbing</span
+              >
+            </button>
+            <button
+              class="activity-tab px-6 py-2 rounded-full text-gray-700 font-medium whitespace-nowrap"
+              data-target="outdoor"
+            >
+              <i class="ri-landscape-line mr-2"></i>
+              <span class="language-content fr-content">Escalade Outdoor</span>
+              <span class="language-content en-content hidden"
+                >Outdoor Climbing</span
+              >
+            </button>
+            <button
+              class="activity-tab px-6 py-2 rounded-full text-gray-700 font-medium whitespace-nowrap"
+              data-target="business"
+            >
+              <i class="ri-briefcase-line mr-2"></i>
+              <span class="language-content fr-content">Entreprises</span>
+              <span class="language-content en-content hidden">Companies</span>
+            </button>
+            <button
+              class="activity-tab px-6 py-2 rounded-full text-gray-700 font-medium whitespace-nowrap"
+              data-target="kids"
+            >
+              <i class="ri-parent-line mr-2"></i>
+              <span class="language-content fr-content">Enfants</span>
+              <span class="language-content en-content hidden">Kids</span>
+            </button>
           </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Formation moulinette</span>
-              <span class="language-content en-content hidden">Top-rope training</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Apprenez les bases en salle.</span>
-              <span class="language-content en-content hidden">Learn the basics indoors.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 120</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
+        </div>
+        <!-- Indoor Activities -->
+        <div class="activity-content" id="indoor-content">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Activity Card 1 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Formation moulinette"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Formation moulinette</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Top-rope training</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Apprenez les bases en salle.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Learn the basics indoors.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 120</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 2 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Formation en tête"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Formation en tête</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Lead climbing training</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Passez au niveau supérieur.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Step up your climbing.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 150</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 3 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Manipulations de corde"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Manipulations de corde</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Rope techniques workshop</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Préparez-vous pour l'extérieur.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Get ready for outdoor climbing.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 135</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 4 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Coaching personnel"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Coaching personnel</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Personal coaching</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Progresser à votre rythme.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Progress at your own pace.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 180</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 5 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Cours assurage dynamique"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Cours assurage dynamique</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Dynamic belaying course</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Sécurisez mieux, grimpez plus fort.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Belay better, climb harder.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 140</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Tarjeta 2 Indoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Formation en tête" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Formation en tête</span>
-              <span class="language-content en-content hidden">Lead climbing training</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Passez au niveau supérieur.</span>
-              <span class="language-content en-content hidden">Step up your climbing.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 150</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
+        <!-- Outdoor Activities -->
+        <div class="activity-content hidden" id="outdoor-content">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Activity Card 1 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Découverte"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content">Découverte</span>
+                  <span class="language-content en-content hidden"
+                    >Discovery sessions</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Vos premiers pas en falaise.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Your first steps on real rock.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 160</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 2 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                 src="img/moulinette outdoor.jpg"
+                 alt="Formation moulinette outdoor"
+                 class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Formation moulinette</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Top-rope belay course</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Devenez autonome.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Become independent.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 180</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 3 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="img/lead outdoor.jpg"
+                  alt="Formation en tête"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Formation en tête</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Lead belay & climb course</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Grimpez en tête, en confiance.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Lead climb with confidence.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 200</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 4 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="img/multipitch.jpg"
+                  alt="Formation grandes voies"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Formation grandes voies</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Multipitch course</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Explorez les longues voies.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Explore multipitch routes.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 250</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 5 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Retraites yoga & escalade"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Retraites yoga & escalade</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Yoga & climbing retreats</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Harmonie du corps et de l'esprit.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Harmony of body and mind.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 320</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 6 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Voyages escalade & multi-aventure"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Voyages escalade & multi-aventure</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Climbing & adventure trips</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Partez à l'aventure.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Go on an adventure.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 450</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Tarjeta 3 Indoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Manipulations de corde" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Manipulations de corde</span>
-              <span class="language-content en-content hidden">Rope techniques workshop</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Préparez-vous pour l'extérieur.</span>
-              <span class="language-content en-content hidden">Get ready for outdoor climbing.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 135</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
+        <!-- Business Activities -->
+        <div class="activity-content hidden" id="business-content">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Activity Card 1 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Team building indoor"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Team building indoor</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Indoor team building</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Boostez la cohésion de vos équipes dans un environnement
+                    sécurisé et ludique. Activités adaptées à tous les
+                    niveaux.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Boost your team cohesion in a safe and fun environment.
+                    Activities adapted to all levels.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 1200</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content"
+                      >Demander un devis</span
+                    >
+                    <span class="language-content en-content hidden"
+                      >Request a quote</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 2 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Team building outdoor"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Team building outdoor</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Outdoor team building</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                 
+                  <span class="language-content fr-content"
+                    >Renforcez vos équipes au contact de la nature. Défis
+                    d'escalade et activités de plein air pour développer la
+                    confiance et la communication.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Strengthen your teams in nature. Climbing challenges and
+                    outdoor activities to develop trust and communication.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 1500</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content"
+                      >Demander un devis</span
+                    >
+                    <span class="language-content en-content hidden"
+                      >Request a quote</span
+                    >
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Tarjeta 4 Indoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Coaching personnel" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Coaching personnel</span>
-              <span class="language-content en-content hidden">Personal coaching</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Progresser à votre rythme.</span>
-              <span class="language-content en-content hidden">Progress at your own pace.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 180</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
+        <!-- Kids Activities -->
+        <div class="activity-content hidden" id="kids-content">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Activity Card 1 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://readdy.ai/api/search-image?query=A%20childrens%20climbing%20day%20camp%20in%20a%20safe%20indoor%20gym%20environment.%20The%20scene%20shows%20kids%20aged%207-12%20learning%20climbing%20basics%20with%20instructors%20providing%20guidance.%20The%20atmosphere%20is%20fun%20and%20educational%20with%20colorful%20climbing%20walls%20designed%20for%20children.%20Safety%20equipment%20is%20properly%20sized%20for%20young%20climbers%20and%20the%20environment%20is%20supportive.&width=600&height=400&seq=12360&orientation=landscape"
+                  alt="Camps à la journée"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Camps à la journée</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Day camps</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Découverte ludique et sécurisée pour les 7-12 ans.
+                    Développement de la motricité, confiance en soi et esprit
+                    d'équipe.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Fun and safe climbing discovery for ages 7-12. Development
+                    of motor skills, self-confidence and team spirit.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 90</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 5 Indoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Cours assurage dynamique" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Cours assurage dynamique</span>
-              <span class="language-content en-content hidden">Dynamic belaying course</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Sécurisez mieux, grimpez plus fort.</span>
-              <span class="language-content en-content hidden">Belay better, climb harder.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 140</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
+            <!-- Activity Card 2 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://readdy.ai/api/search-image?query=A%20week-long%20childrens%20climbing%20camp%20in%20both%20indoor%20and%20outdoor%20settings.%20The%20scene%20shows%20kids%20aged%208-14%20participating%20in%20various%20climbing%20activities%20with%20professional%20instructors.%20The%20atmosphere%20combines%20fun%20with%20skill%20development%2C%20showing%20children%20learning%20techniques%20while%20enjoying%20themselves.%20Safety%20equipment%20is%20properly%20fitted%20and%20the%20environment%20is%20supportive%20and%20educational.&width=600&height=400&seq=12361&orientation=landscape"
+                  alt="Camps vacances"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content"
+                    >Camps vacances</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >Holiday camps</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Une semaine d'aventures pour les 8-14 ans. Progression
+                    technique, jeux et découvertes en toute sécurité.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >A week of adventures for ages 8-14. Technical progression,
+                    games and discoveries in complete safety.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 390</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Activity Card 3 -->
+            <div
+              class="activity-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="h-48 overflow-hidden">
+                <img
+                  src="https://readdy.ai/api/search-image?query=A%20birthday%20party%20at%20an%20indoor%20climbing%20gym%20for%20children.%20The%20scene%20shows%20kids%20having%20fun%20climbing%20with%20special%20birthday%20decorations%20visible.%20Instructors%20are%20ensuring%20safety%20while%20maintaining%20a%20festive%20atmosphere.%20The%20climbing%20walls%20are%20colorful%20and%20designed%20for%20children%20with%20proper%20safety%20equipment.%20The%20environment%20combines%20celebration%20with%20active%20fun.&width=600&height=400&seq=12362&orientation=landscape"
+                  alt="Anniversaires"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <span class="language-content fr-content">Anniversaires</span>
+                  <span class="language-content en-content hidden"
+                    >Birthday parties</span
+                  >
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  <span class="language-content fr-content"
+                    >Un anniversaire inoubliable pour votre enfant et ses amis.
+                    Activités d'escalade adaptées et encadrées par des
+                    professionnels.</span
+                  >
+                  <span class="language-content en-content hidden"
+                    >An unforgettable birthday for your child and their friends.
+                    Adapted climbing activities supervised by
+                    professionals.</span
+                  >
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-primary font-semibold">CHF 280</span>
+                  <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap"
+                  >
+                    <span class="language-content fr-content">Réserver</span>
+                    <span class="language-content en-content hidden"
+                      >Book now</span
+                    >
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Outdoor Activities - TODAS LAS TARJETAS MODIFICADAS -->
-    <div class="activity-content hidden" id="outdoor-content">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Tarjeta 1 Outdoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Découverte" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Découverte</span>
-              <span class="language-content en-content hidden">Discovery sessions</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Vos premiers pas en falaise.</span>
-              <span class="language-content en-content hidden">Your first steps on real rock.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 160</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 2 Outdoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="img/p1.jpg" alt="Formation moulinette outdoor" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Formation moulinette</span>
-              <span class="language-content en-content hidden">Top-rope belay course</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Devenez autonome.</span>
-              <span class="language-content en-content hidden">Become independent.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 180</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 3 Outdoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Formation en tête" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Formation en tête</span>
-              <span class="language-content en-content hidden">Lead belay & climb course</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Grimpez en tête, en confiance.</span>
-              <span class="language-content en-content hidden">Lead climb with confidence.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 200</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 4 Outdoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Formation grandes voies" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Formation grandes voies</span>
-              <span class="language-content en-content hidden">Multipitch course</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Explorez les longues voies.</span>
-              <span class="language-content en-content hidden">Explore multipitch routes.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 250</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 5 Outdoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Retraites yoga & escalade" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Retraites yoga & escalade</span>
-              <span class="language-content en-content hidden">Yoga & climbing retreats</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Harmonie du corps et de l'esprit.</span>
-              <span class="language-content en-content hidden">Harmony of body and mind.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 320</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 6 Outdoor -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Voyages escalade" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Voyages escalade & multi-aventure</span>
-              <span class="language-content en-content hidden">Climbing & adventure trips</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Partez à l'aventure.</span>
-              <span class="language-content en-content hidden">Go on an adventure.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 450</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Business Activities - TODAS LAS TARJETAS MODIFICADAS -->
-    <div class="activity-content hidden" id="business-content">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Tarjeta 1 Business -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Team building indoor" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Team building indoor</span>
-              <span class="language-content en-content hidden">Indoor team building</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Boostez la cohésion de vos équipes dans un environnement sécurisé et ludique.</span>
-              <span class="language-content en-content hidden">Boost your team cohesion in a safe and fun environment.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 1200</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Demander un devis</span>
-                <span class="language-content en-content hidden">Request a quote</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 2 Business -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://via.placeholder.com/600x400" alt="Team building outdoor" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Team building outdoor</span>
-              <span class="language-content en-content hidden">Outdoor team building</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Renforcez vos équipes au contact de la nature.</span>
-              <span class="language-content en-content hidden">Strengthen your teams in nature.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 1500</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Demander un devis</span>
-                <span class="language-content en-content hidden">Request a quote</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Kids Activities - TODAS LAS TARJETAS MODIFICADAS -->
-    <div class="activity-content hidden" id="kids-content">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Tarjeta 1 Kids -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://readdy.ai/api/search-image?query=A%20childrens%20climbing%20day%20camp" alt="Camps à la journée" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Camps à la journée</span>
-              <span class="language-content en-content hidden">Day camps</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Découverte ludique et sécurisée pour les 7-12 ans.</span>
-              <span class="language-content en-content hidden">Fun and safe climbing discovery for ages 7-12.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 90</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 2 Kids -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://readdy.ai/api/search-image?query=A%20week-long%20childrens%20climbing%20camp" alt="Camps vacances" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Camps vacances</span>
-              <span class="language-content en-content hidden">Holiday camps</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Une semaine d'aventures pour les 8-14 ans.</span>
-              <span class="language-content en-content hidden">A week of adventures for ages 8-14.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 390</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 3 Kids -->
-        <div class="activity-card rounded-lg overflow-hidden">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://readdy.ai/api/search-image?query=A%20birthday%20party%20at%20an%20indoor%20climbing%20gym" alt="Anniversaires" class="w-full h-full object-cover object-top">
-            <div class="image-overlay"></div>
-          </div>
-          <div class="content-wrapper p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              <span class="language-content fr-content">Anniversaires</span>
-              <span class="language-content en-content hidden">Birthday parties</span>
-            </h3>
-            <p class="text-gray-700 mb-4">
-              <span class="language-content fr-content">Un anniversaire inoubliable pour votre enfant et ses amis.</span>
-              <span class="language-content en-content hidden">An unforgettable birthday for your child.</span>
-            </p>
-            <div class="flex justify-between items-center">
-              <span class="text-primary font-semibold">CHF 280</span>
-              <button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap">
-                <span class="language-content fr-content">Réserver</span>
-                <span class="language-content en-content hidden">Book now</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
     </section>
      <!-- Booking Section -->
       <section id="booking" class="py-16 bg-white">
