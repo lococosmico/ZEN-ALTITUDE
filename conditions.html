@@ -1,198 +1,387 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mentions légales & Conditions | Vertical Horizons</title>
-    <link href="https://cdn.tailwindcss.com/3.4.16" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#2F4F4F"
-            }
-          }
-        }
-      }
-    </script>
-  </head>
-  <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
-    <main class="max-w-4xl mx-auto px-6 py-12">
-      <h1 class="text-3xl font-bold mb-6">
-        <span class="language-content fr-content">Mentions légales, Conditions générales & Politique de confidentialité</span>
-        <span class="language-content en-content hidden">Legal Notice, Terms & Conditions & Privacy Policy</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions Légales | Vertical Horizons</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .legal-section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .legal-section h2 {
+      border-bottom: 2px solid #2F4F4F;
+      padding-bottom: 8px;
+      margin-top: 40px;
+    }
+    .language-content {
+      display: none;
+    }
+    .language-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="/index.html" class="flex items-center gap-3">
+        <img src="img/logo.jpg" alt="Vertical Horizons Logo" class="w-12 h-12 rounded-full">
+        <span class="text-3xl font-['Pacifico'] text-primary">Vertical Horizons</span>
+      </a>
+      <div class="flex items-center gap-8">
+        <div class="flex items-center bg-gray-100/80 rounded-full p-1">
+          <button type="button" class="language-btn active px-4 py-2 rounded-full bg-white text-primary font-medium shadow-sm flex items-center gap-2" data-lang="fr">
+            <span class="ri-flag-line"></span>FR
+          </button>
+          <button type="button" class="language-btn px-4 py-2 rounded-full text-gray-600 font-medium hover:text-primary flex items-center gap-2" data-lang="en">
+            <span class="ri-flag-line"></span>EN
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-16">
+    <div class="legal-section bg-white rounded-lg shadow-md p-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-8">
+        <span class="language-content fr-content active">Conditions Légales</span>
+        <span class="language-content en-content">Terms & Conditions</span>
       </h1>
 
-      <!-- Section 1: Informations légales / Legal Information -->
-      <section class="mb-8">
-        <h2 class="text-xl font-semibold mb-2">
-          <span class="language-content fr-content">1. Informations légales</span>
-          <span class="language-content en-content hidden">1. Legal Information</span>
+      <!-- 1. Conditions Générales -->
+      <section>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+          <span class="language-content fr-content active">1. Conditions Générales</span>
+          <span class="language-content en-content">1. General Terms</span>
         </h2>
-        <p>
-          <span class="language-content fr-content">
-            <strong>Vertical Horizons</strong> est une entreprise individuelle enregistrée en Suisse, spécialisée dans l'organisation d'activités de montagne et d'escalade. <br />
-            Adresse : Rue des Alpes 10, 1000 Lausanne, Suisse<br />
-            Email : contact@verticalhorizons.ch<br />
-            Numéro IDE : CHE-123.456.789
-          </span>
-          <span class="language-content en-content hidden">
-            <strong>Vertical Horizons</strong> is a sole proprietorship registered in Switzerland, specializing in organizing mountain and climbing activities. <br />
-            Address: Rue des Alpes 10, 1000 Lausanne, Switzerland<br />
-            Email: contact@verticalhorizons.ch<br />
-            UID Number: CHE-123.456.789
-          </span>
-        </p>
+        <div class="text-gray-700 space-y-4">
+          <p class="language-content fr-content active">
+            Toutes nos activités sont soumises aux conditions générales de Vertical Horizons et aux règlements des sites où nous opérons. La participation implique l'acceptation de ces conditions.
+          </p>
+          <p class="language-content en-content">
+            All our activities are subject to Vertical Horizons' general terms and conditions and to the regulations of the sites where we operate. Participation implies acceptance of these terms.
+          </p>
+          
+          <p class="language-content fr-content active">
+            L'escalade est une activité à risque. En participant à nos activités, vous reconnaissez ces risques et acceptez d'en assumer la responsabilité.
+          </p>
+          <p class="language-content en-content">
+            Climbing is a risk activity. By participating in our activities, you acknowledge these risks and agree to assume responsibility.
+          </p>
+        </div>
       </section>
 
-      <!-- Section 2: Conditions générales de vente / Terms and Conditions -->
-      <section class="mb-8">
-        <h2 class="text-xl font-semibold mb-2">
-          <span class="language-content fr-content">2. Conditions générales de vente</span>
-          <span class="language-content en-content hidden">2. Terms and Conditions</span>
+      <!-- 2. Réservations et Paiements -->
+      <section>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">
+          <span class="language-content fr-content active">2. Réservations et Paiements</span>
+          <span class="language-content en-content">2. Bookings and Payments</span>
         </h2>
-        <p>
-          <span class="language-content fr-content">
-            En réservant une activité avec Vertical Horizons, vous acceptez les conditions suivantes :
-          </span>
-          <span class="language-content en-content hidden">
-            By booking an activity with Vertical Horizons, you agree to the following terms:
-          </span>
-        </p>
-        <ul class="list-disc list-inside">
-          <li>
-            <span class="language-content fr-content">
-              Les réservations sont confirmées après réception du paiement complet.
-            </span>
-            <span class="language-content en-content hidden">
-              Bookings are confirmed upon receipt of full payment.
-            </span>
-          </li>
-          <li>
-            <span class="language-content fr-content">
-              En cas d'annulation par le participant :
-              <ul class="list-disc list-inside ml-6">
-                <li>Plus de 14 jours avant l'activité : remboursement complet.</li>
-                <li>Entre 7 et 14 jours : remboursement de 50%.</li>
-                <li>Moins de 7 jours : aucun remboursement.</li>
-              </ul>
-            </span>
-            <span class="language-content en-content hidden">
-              In case of cancellation by the participant:
-              <ul class="list-disc list-inside ml-6">
-                <li>More than 14 days before the activity: full refund.</li>
-                <li>Between 7 and 14 days: 50% refund.</li>
-                <li>Less than 7 days: no refund.</li>
-              </ul>
-            </span>
-          </li>
-          <li>
-            <span class="language-content fr-content">
-              En cas d'annulation due aux conditions météorologiques ou pour des raisons de sécurité, Vertical Horizons proposera une date alternative ou un remboursement complet.
-            </span>
-            <span class="language-content en-content hidden">
-              In case of cancellation due to weather conditions or safety reasons, Vertical Horizons will offer an alternative date or a full refund.
-            </span>
-          </li>
-          <li>
-            <span class="language-content fr-content">
-              Les participants doivent avoir une assurance accident et responsabilité civile valide.
-            </span>
-            <span class="language-content en-content hidden">
-              Participants must have valid accident and liability insurance.
-            </span>
-          </li>
-          <li>
-            <span class="language-content fr-content">
-              Vertical Horizons décline toute responsabilité en cas de perte, vol ou dommage du matériel personnel.
-            </span>
-            <span class="language-content en-content hidden">
-              Vertical Horizons is not responsible for loss, theft, or damage to personal equipment.
-            </span>
-          </li>
-          <li>
-            <span class="language-content fr-content">
-              Les participants sont responsables de leur comportement et doivent suivre les instructions du guide à tout moment.
-            </span>
-            <span class="language-content en-content hidden">
-              Participants are responsible for their behavior and must follow the guide's instructions at all times.
-            </span>
-          </li>
-        </ul>
+        <div class="text-gray-700 space-y-4">
+          <p class="language-content fr-content active">
+            Les réservations sont confirmées uniquement après réception du paiement complet. Nous acceptons les virements bancaires, Twint et cartes de crédit.
+          </p>
+          <p class="language-content en-content">
+            Bookings are confirmed only after receipt of full payment. We accept bank transfers, Twint and credit cards.
+          </p>
+          
+          <p class="language-content fr-content active">
+            Pour les activités en groupe ou les team buildings, un acompte de 30% est requis à la réservation.
+          </p>
+          <p class="language-content en-content">
+            For group activities or team buildings, a 30% deposit is required upon booking.
+          </p>
+        </div>
       </section>
 
-      <!-- Section 3: Politique de confidentialité / Privacy Policy -->
-      <section class="mb-8">
-        <h2 class="text-xl font-semibold mb-2">
-          <span class="language-content fr-content">3. Politique de confidentialité</span>
-          <span class="language-content en-content hidden">3. Privacy Policy</span>
+      <!-- 3. Politique d'Annulation -->
+      <section>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">
+          <span class="language-content fr-content active">3. Politique d'Annulation</span>
+          <span class="language-content en-content">3. Cancellation Policy</span>
         </h2>
-        <p>
-          <span class="language-content fr-content">
-            Nous respectons votre vie privée et nous engageons à protéger vos données personnelles conformément à la loi fédérale sur la protection des données (LPD) et au Règlement général sur la protection des données (RGPD) de l'UE.
-          </span>
-          <span class="language-content en-content hidden">
-            We respect your privacy and are committed to protecting your personal data in accordance with the Swiss Federal Data Protection Act (FADP) and the EU General Data Protection Regulation (GDPR).
-          </span>
-        </p>
-        <ul class="list-disc list-inside">
-          <li>
-            <span class="language-content fr-content">
-              Les données collectées (nom, prénom, email, téléphone) sont utilisées uniquement pour la gestion des réservations et la communication avec les clients.
-            </span>
-            <span class="language-content en-content hidden">
-              Collected data (name, surname, email, phone) are used solely for booking management and client communication.
-            </span>
-          </li>
-          <li>
-            <span class="language-content fr-content">
-              Vos données ne sont pas partagées avec des tiers sans votre consentement explicite.
-            </span>
-            <span class="language-content en-content hidden">
-              Your data is not shared with third parties without your explicit consent.
-            </span>
-          </li>
-          <li>
-            <span class="language-content fr-content">
-              Vous avez le droit d'accéder, de rectifier ou de supprimer vos données personnelles à tout moment en nous contactant à l'adresse email indiquée ci-dessus.
-            </span>
-            <span class="language-content en-content hidden">
-              You have the right to access, rectify, or delete your personal data at any time by contacting us at the email address provided above.
-            </span>
-          </li>
-          <li>
-            <span class="language-content fr-content">
-              Notre site utilise des cookies pour améliorer l'expérience utilisateur. Vous pouvez configurer votre navigateur pour refuser les cookies.
-            </span>
-            <span class="language-content en-content hidden">
-              Our website uses cookies to enhance user experience. You can configure your browser to refuse cookies.
-            </span>
-          </li>
-        </ul>
+        <div class="text-gray-700 space-y-4">
+          <h3 class="font-semibold language-content fr-content active">Par le client :</h3>
+          <h3 class="font-semibold language-content en-content">By the client:</h3>
+          
+          <ul class="list-disc pl-6 space-y-2">
+            <li class="language-content fr-content active">
+              <strong>Plus de 7 jours avant :</strong> Remboursement à 100%
+            </li>
+            <li class="language-content en-content">
+              <strong>More than 7 days before:</strong> 100% refund
+            </li>
+            
+            <li class="language-content fr-content active">
+              <strong>3-7 jours avant :</strong> Remboursement à 50%
+            </li>
+            <li class="language-content en-content">
+              <strong>3-7 days before:</strong> 50% refund
+            </li>
+            
+            <li class="language-content fr-content active">
+              <strong>Moins de 3 jours avant :</strong> Aucun remboursement
+            </li>
+            <li class="language-content en-content">
+              <strong>Less than 3 days before:</strong> No refund
+            </li>
+            
+            <li class="language-content fr-content active">
+              <strong>Report :</strong> Possible selon disponibilité (frais de 20 CHF peuvent s'appliquer)
+            </li>
+            <li class="language-content en-content">
+              <strong>Rescheduling:</strong> Possible based on availability (20 CHF fee may apply)
+            </li>
+          </ul>
+          
+          <h3 class="font-semibold mt-4 language-content fr-content active">Par Vertical Horizons :</h3>
+          <h3 class="font-semibold mt-4 language-content en-content">By Vertical Horizons:</h3>
+          
+          <p class="language-content fr-content active">
+            En cas de conditions météorologiques défavorables ou de force majeure, nous nous réservons le droit d'annuler ou de reporter l'activité. Dans ce cas, un remboursement complet ou une réorganisation sera proposé.
+          </p>
+          <p class="language-content en-content">
+            In case of unfavorable weather conditions or force majeure, we reserve the right to cancel or postpone the activity. In this case, a full refund or reorganization will be offered.
+          </p>
+        </div>
       </section>
 
-      <!-- Section 4: Droit applicable / Applicable Law -->
-      <section class="mb-8">
-        <h2 class="text-xl font-semibold mb-2">
-          <span class="language-content fr-content">4. Droit applicable</span>
-          <span class="language-content en-content hidden">4. Applicable Law</span>
+      <!-- 4. Responsabilités -->
+      <section>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">
+          <span class="language-content fr-content active">4. Responsabilités</span>
+          <span class="language-content en-content">4. Responsibilities</span>
         </h2>
-        <p>
-          <span class="language-content fr-content">
-            Les présentes conditions sont régies par le droit suisse. En cas de litige, le for juridique est situé à Lausanne, Suisse.
-          </span>
-          <span class="language-content en-content hidden">
-            These terms are governed by Swiss law. In case of dispute, the place of jurisdiction is Lausanne, Switzerland.
-          </span>
-        </p>
+        <div class="text-gray-700 space-y-4">
+          <p class="language-content fr-content active">
+            Vertical Horizons décline toute responsabilité en cas d'accident dû à la non-observation des consignes de sécurité ou à un comportement imprudent des participants.
+          </p>
+          <p class="language-content en-content">
+            Vertical Horizons declines all responsibility in case of accident due to non-compliance with safety instructions or reckless behavior of participants.
+          </p>
+          
+          <p class="language-content fr-content active">
+            Les participants doivent déclarer tout problème de santé ou condition physique particulière avant l'activité. Certaines conditions peuvent contre-indiquer la pratique de l'escalade.
+          </p>
+          <p class="language-content en-content">
+            Participants must declare any health problems or particular physical condition before the activity. Some conditions may contraindicate climbing.
+          </p>
+          
+          <p class="language-content fr-content active">
+            Les mineurs doivent être accompagnés d'un adulte responsable ou présenter une autorisation parentale signée.
+          </p>
+          <p class="language-content en-content">
+            Minors must be accompanied by a responsible adult or present a signed parental authorization.
+          </p>
+        </div>
       </section>
 
-      <!-- Section 5: Mise à jour / Last Update -->
-      <section class="mt-10 text-sm text-gray-500">
-        <p class="language-content fr-content">Dernière mise à jour : mai 2025</p>
-        <p class="language-content en-content hidden">Last updated: May 2025</p>
+      <!-- 5. Assurance -->
+      <section>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">
+          <span class="language-content fr-content active">5. Assurance</span>
+          <span class="language-content en-content">5. Insurance</span>
+        </h2>
+        <div class="text-gray-700 space-y-4">
+          <p class="language-content fr-content active">
+            Vertical Horizons est couvert par une assurance responsabilité civile professionnelle. Cependant, cette assurance ne couvre pas les accidents personnels des participants.
+          </p>
+          <p class="language-content en-content">
+            Vertical Horizons is covered by professional liability insurance. However, this insurance does not cover personal accidents of participants.
+          </p>
+          
+          <p class="language-content fr-content active">
+            Nous recommandons fortement aux participants de souscrire une assurance accident personnelle et une assurance rapatriement pour les activités en montagne.
+          </p>
+          <p class="language-content en-content">
+            We strongly recommend participants to take out personal accident insurance and repatriation insurance for mountain activities.
+          </p>
+        </div>
       </section>
-    </main>
-  </body>
+
+      <!-- 6. Protection des Données -->
+      <section>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">
+          <span class="language-content fr-content active">6. Protection des Données</span>
+          <span class="language-content en-content">6. Data Protection</span>
+        </h2>
+        <div class="text-gray-700 space-y-4">
+          <p class="language-content fr-content active">
+            Conformément à la loi suisse sur la protection des données (LPD), nous traitons vos données personnelles de manière confidentielle et uniquement dans le cadre de nos prestations.
+          </p>
+          <p class="language-content en-content">
+            In accordance with the Swiss Data Protection Act (DPA), we process your personal data confidentially and only within the framework of our services.
+          </p>
+          
+          <p class="language-content fr-content active">
+            Les photos prises pendant les activités peuvent être utilisées à des fins promotionnelles, sauf opposition expresse des participants.
+          </p>
+          <p class="language-content en-content">
+            Photos taken during activities may be used for promotional purposes, unless participants expressly object.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. Droit Applicable -->
+      <section>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">
+          <span class="language-content fr-content active">7. Droit Applicable</span>
+          <span class="language-content en-content">7. Applicable Law</span>
+        </h2>
+        <div class="text-gray-700 space-y-4">
+          <p class="language-content fr-content active">
+            Les présentes conditions sont régies par le droit suisse. Tout litige relève de la compétence des tribunaux du canton de Vaud.
+          </p>
+          <p class="language-content en-content">
+            These terms are governed by Swiss law. Any dispute falls under the jurisdiction of the courts of the canton of Vaud.
+          </p>
+        </div>
+      </section>
+
+      <!-- Dernière mise à jour -->
+      <div class="mt-12 pt-6 border-t border-gray-200 text-sm text-gray-500">
+        <p class="language-content fr-content active">Dernière mise à jour : 15 juin 2025</p>
+        <p class="language-content en-content">Last update: June 15, 2025</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Columna 1: Logo y redes -->
+        <div>
+          <a href="/index.html" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Vertical Horizons</a>
+          <p class="text-gray-400 mb-6">
+            <span class="language-content fr-content active">Votre partenaire d'escalade en Suisse</span>
+            <span class="language-content en-content">Your climbing partner in Switzerland</span>
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://www.instagram.com/verticalhorizons.ch/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+              <i class="ri-instagram-line ri-lg"></i>
+            </a>
+            <a href="https://www.facebook.com/Verticalhorizons.ch" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+              <i class="ri-facebook-line ri-lg"></i>
+            </a>
+            <a href="https://wa.me/41764969463" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+              <i class="ri-whatsapp-line ri-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Enlaces rápidos -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">
+            <span class="language-content fr-content active">Accès rapide</span>
+            <span class="language-content en-content">Quick Links</span>
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="/index.html#about" class="text-gray-400 hover:text-white transition-colors">
+                <span class="language-content fr-content active">À propos</span>
+                <span class="language-content en-content">About</span>
+              </a>
+            </li>
+            <li>
+              <a href="/index.html#activities" class="text-gray-400 hover:text-white transition-colors">
+                <span class="language-content fr-content active">Activités</span>
+                <span class="language-content en-content">Activities</span>
+              </a>
+            </li>
+            <li>
+              <a href="/index.html#contact" class="text-gray-400 hover:text-white transition-colors">
+                <span class="language-content fr-content active">Contact</span>
+                <span class="language-content en-content">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Contacto -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">
+            <span class="language-content fr-content active">Nous contacter</span>
+            <span class="language-content en-content">Contact Us</span>
+          </h3>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-center gap-2">
+              <i class="ri-map-pin-line"></i>
+              Ollon, Suisse
+            </li>
+            <li class="flex items-center gap-2">
+              <a href="mailto:contact@verticalhorizons.ch" class="hover:text-white transition-colors">
+                <i class="ri-mail-line"></i>
+                contact@verticalhorizons.ch
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <a href="https://wa.me/41764969463" target="_blank" class="hover:text-white transition-colors">
+                <i class="ri-phone-line"></i>
+                +41 76 496 94 63
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Línea legal discreta -->
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+        <p>
+          &copy; 2025 Vertical Horizons. 
+          <a href="/conditions.html" class="hover:text-white transition-colors">
+            <span class="language-content fr-content active">Conditions légales</span>
+            <span class="language-content en-content">Terms & Conditions</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Language toggle
+    document.addEventListener("DOMContentLoaded", function() {
+      const languageButtons = document.querySelectorAll(".language-btn");
+      
+      languageButtons.forEach(button => {
+        button.addEventListener("click", function() {
+          const lang = this.getAttribute("data-lang");
+          
+          // Update button styles
+          languageButtons.forEach(btn => {
+            btn.classList.remove("active", "bg-white", "text-primary", "shadow-sm");
+            btn.classList.add("text-gray-600");
+          });
+          this.classList.add("active", "bg-white", "text-primary", "shadow-sm");
+          this.classList.remove("text-gray-600");
+          
+          // Update content visibility
+          document.querySelectorAll(".language-content").forEach(content => {
+            content.classList.remove("active");
+          });
+          
+          if (lang === "en") {
+            document.querySelectorAll(".en-content").forEach(content => {
+              content.classList.add("active");
+            });
+          } else {
+            document.querySelectorAll(".fr-content").forEach(content => {
+              content.classList.add("active");
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
 </html>
