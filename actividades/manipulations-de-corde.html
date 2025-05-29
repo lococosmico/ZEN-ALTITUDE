@@ -294,7 +294,6 @@
               <li>Principes de redondance et d'angle optimal</li>
               <li>Création d'ancrages avec corde et sangle</li>
               <li>Évaluation de la solidité des points naturels</li>
-              <li>Utilisation de coinceurs et autres protections</li>
             </ul>
             
             <h3>3. Techniques de rappel</h3>
@@ -553,13 +552,21 @@
         }
         
         // Mobile menu toggle
-        const mobileMenuButton = document.getElementById("mobileMenuButton");
-        const mobileMenu = document.getElementById("mobileMenu");
-        if (mobileMenuButton && mobileMenu) {
-          mobileMenuButton.addEventListener("click", function () {
-            mobileMenu.classList.toggle("hidden");
-          });
-        }
+         const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuLinks = document.querySelectorAll("#mobileMenu a"); // Selecciona todos los enlaces del menú
+
+    // Abrir/cerrar menú al hacer clic en el botón ☰
+    mobileMenuButton.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Cerrar menú al hacer clic en cualquier enlace
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.add("hidden"); // Cierra el menú
+      });
+    });
         
         // Language toggle
         const languageButtons = document.querySelectorAll(".language-btn");

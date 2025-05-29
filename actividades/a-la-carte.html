@@ -223,7 +223,7 @@
           <div>
             <div class="language-content fr-content">
                 <p class="text-lg mb-4">
-                    Créez l’expérience idéale pour votre groupe avec une activité 100&nbsp;% personnalisée, en salle ou en extérieur — ou laissez-vous simplement guider vers la découverte.
+                    Créez l’expérience idéale pour votre groupe avec une activité complètement personnalisée, en salle ou en extérieur — ou laissez-vous simplement guider vers la découverte.
                   </p>
               <ul class="space-y-2 mb-6">
                 <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Lieu au choix (indoor/outdoor)</li>
@@ -553,13 +553,21 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Mobile menu toggle
-        const mobileMenuButton = document.getElementById("mobileMenuButton");
-        const mobileMenu = document.getElementById("mobileMenu");
-        if (mobileMenuButton && mobileMenu) {
-          mobileMenuButton.addEventListener("click", function () {
-            mobileMenu.classList.toggle("hidden");
-          });
-        }
+         const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuLinks = document.querySelectorAll("#mobileMenu a"); // Selecciona todos los enlaces del menú
+
+    // Abrir/cerrar menú al hacer clic en el botón ☰
+    mobileMenuButton.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Cerrar menú al hacer clic en cualquier enlace
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.add("hidden"); // Cierra el menú
+      });
+    });
         
         // Language toggle
         const languageButtons = document.querySelectorAll(".language-btn");
