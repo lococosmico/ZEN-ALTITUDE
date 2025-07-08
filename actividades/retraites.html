@@ -89,6 +89,12 @@
         background: linear-gradient(120deg, #f0fff0 0%, #e6f6ff 100%);
         border-left: 4px solid #2F4F4F;
       }
+      .format-btn {
+        transition: all 0.3s ease;
+      }
+      .format-btn.active {
+        transition: all 0.3s ease;
+      }
     </style>
   </head>
 
@@ -184,6 +190,7 @@
         </div>
       </div>
     </header>
+  
   <!-- Hero Section -->
   <section class="hero-section min-h-[500px] flex items-center">
     <div class="container mx-auto px-4 py-16 w-full">
@@ -204,33 +211,39 @@
             </div>
           <div>
             <div class="language-content fr-content">
-              <p class="text-lg mb-4">Immersion de 3 jours alliant escalade, yoga et pleine conscience dans les paysages préservés des Alpes suisses.</p>
+              <p class="text-lg mb-4">Choisissez entre nos formats de 2 ou 3 jours alliant escalade et yoga dans les magnifiques paysages des Alpes suisses.</p>
               <ul class="space-y-2 mb-6">
-                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Hébergement en écolodge</li>
-                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> 2 sessions d'escalade quotidiennes</li>
-                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> 3 pratiques de yoga journalières</li>
-                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Cuisine végétarienne bio</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Hébergement en refuge alpin (optionnel)</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Sites d'escalade à proximité immédiate</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Sessions de yoga adaptées aux grimpeurs</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Maximum 8 participants par professeur</li>
               </ul>
             </div>
             <div class="language-content en-content hidden">
-              <p class="text-lg mb-4">3-day immersion combining climbing, yoga and mindfulness in the pristine landscapes of the Swiss Alps.</p>
+              <p class="text-lg mb-4">Choose between our 2 or 3-day formats combining climbing and yoga in the beautiful landscapes of the Swiss Alps.</p>
               <ul class="space-y-2 mb-6">
-                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Ecolodge accommodation</li>
-                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> 2 daily climbing sessions</li>
-                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> 3 daily yoga practices</li>
-                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Organic vegetarian cuisine</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Alpine hut accommodation (optional)</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Climbing sites in immediate proximity</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Yoga sessions adapted for climbers</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Maximum 8 participants per instructor</li>
               </ul>
             </div>
 
-            <div class="bg-gray-50 p-4 rounded-lg mb-6">
-              <p class="font-semibold text-primary mb-2">
-                <span class="language-content fr-content">CHF 690</span>
-                <span class="language-content en-content hidden">CHF 690</span>
-              </p>
-              <p class="text-sm text-gray-600">
-                <span class="language-content fr-content">tout inclus (hébergement, repas, activités)</span>
-                <span class="language-content en-content hidden">all inclusive (accommodation, meals, activities)</span>
-              </p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <p class="font-semibold text-primary mb-2">CHF 550</p>
+                <p class="text-sm text-gray-600">
+                  <span class="language-content fr-content">2 jours - cours seulement</span>
+                  <span class="language-content en-content hidden">2 days - course only</span>
+                </p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <p class="font-semibold text-primary mb-2">CHF 750</p>
+                <p class="text-sm text-gray-600">
+                  <span class="language-content fr-content">3 jours - cours seulement</span>
+                  <span class="language-content en-content hidden">3 days - course only</span>
+                </p>
+              </div>
             </div>
             
             <div class="flex flex-col sm:flex-row gap-4">
@@ -261,132 +274,222 @@
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-2xl font-bold text-primary mb-2">
-            <span class="language-content fr-content">Notre Programme</span>
-            <span class="language-content en-content hidden">Our Program</span>
+            <span class="language-content fr-content">Nos Programmes</span>
+            <span class="language-content en-content hidden">Our Programs</span>
           </h2>
           <div class="w-20 h-1 bg-primary mx-auto"></div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6 mb-12">
-          <!-- Jour 1 -->
-          <div class="retreat-card bg-gray-50 rounded-lg overflow-hidden">
-            <div class="bg-primary text-white p-4 text-center">
-              <h3 class="font-bold">
-                <span class="language-content fr-content">Jour 1</span>
-                <span class="language-content en-content hidden">Day 1</span>
-              </h3>
+        <!-- Selector de formato -->
+        <div class="flex justify-center mb-8">
+          <div class="inline-flex bg-gray-100 rounded-lg p-1">
+            <button class="format-btn active px-4 py-2 rounded-lg bg-white text-primary font-medium shadow-sm" data-format="2days">
+              <span class="language-content fr-content">2 Jours</span>
+              <span class="language-content en-content hidden">2 Days</span>
+            </button>
+            <button class="format-btn px-4 py-2 rounded-lg text-gray-600 font-medium hover:text-primary" data-format="3days">
+              <span class="language-content fr-content">3 Jours</span>
+              <span class="language-content en-content hidden">3 Days</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Programa de 2 días (mostrado por defecto) -->
+        <div id="2days-program" class="format-content">
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <!-- Jour 1 -->
+            <div class="retreat-card bg-gray-50 rounded-lg overflow-hidden">
+              <div class="bg-primary text-white p-4 text-center">
+                <h3 class="font-bold">
+                  <span class="language-content fr-content">Jour 1 - Initiation</span>
+                  <span class="language-content en-content hidden">Day 1 - Introduction</span>
+                </h3>
+              </div>
+              <div class="p-6">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>14h</strong> - 
+                      <span class="language-content fr-content">Accueil et présentation du programme</span>
+                      <span class="language-content en-content hidden">Welcome and program introduction</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>16h</strong> - 
+                      <span class="language-content fr-content">Session d'escalade technique (mouvements de base, sécurité)</span>
+                      <span class="language-content en-content hidden">Technical climbing session (basic moves, safety)</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>18h</strong> - 
+                      <span class="language-content fr-content">Yoga vinyasa pour améliorer la flexibilité</span>
+                      <span class="language-content en-content hidden">Vinyasa yoga to improve flexibility</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="p-6">
-              <ul class="space-y-3">
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>14h</strong> - 
-                    <span class="language-content fr-content">Accueil et installation</span>
-                    <span class="language-content en-content hidden">Welcome and settling in</span>
-                  </span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>16h</strong> - 
-                    <span class="language-content fr-content">Yoga d'ouverture</span>
-                    <span class="language-content en-content hidden">Opening yoga</span>
-                  </span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>18h</strong> - 
-                    <span class="language-content fr-content">Atelier "Présence en escalade"</span>
-                    <span class="language-content en-content hidden">"Climbing Presence" workshop</span>
-                  </span>
-                </li>
-              </ul>
+
+            <!-- Jour 2 -->
+            <div class="retreat-card bg-gray-50 rounded-lg overflow-hidden">
+              <div class="bg-primary text-white p-4 text-center">
+                <h3 class="font-bold">
+                  <span class="language-content fr-content">Jour 2 - Perfectionnement</span>
+                  <span class="language-content en-content hidden">Day 2 - Improvement</span>
+                </h3>
+              </div>
+              <div class="p-6">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>7h</strong> - 
+                      <span class="language-content fr-content">Yoga matinal pour préparer le corps</span>
+                      <span class="language-content en-content hidden">Morning yoga to prepare the body</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>9h</strong> - 
+                      <span class="language-content fr-content">Escalade en voie avec techniques avancées</span>
+                      <span class="language-content en-content hidden">Route climbing with advanced techniques</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>14h</strong> - 
+                      <span class="language-content fr-content">Retour d'expérience et clôture</span>
+                      <span class="language-content en-content hidden">Feedback session and closing</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- Jour 2 -->
-          <div class="retreat-card bg-gray-50 rounded-lg overflow-hidden">
-            <div class="bg-primary text-white p-4 text-center">
-              <h3 class="font-bold">
-                <span class="language-content fr-content">Jour 2</span>
-                <span class="language-content en-content hidden">Day 2</span>
-              </h3>
+        <!-- Programa de 3 días (oculto por defecto) -->
+        <div id="3days-program" class="format-content hidden">
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <!-- Jour 1 -->
+            <div class="retreat-card bg-gray-50 rounded-lg overflow-hidden">
+              <div class="bg-primary text-white p-4 text-center">
+                <h3 class="font-bold">
+                  <span class="language-content fr-content">Jour 1 - Fondations</span>
+                  <span class="language-content en-content hidden">Day 1 - Foundations</span>
+                </h3>
+              </div>
+              <div class="p-6">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>10h</strong> - 
+                      <span class="language-content fr-content">Accueil et évaluation des niveaux</span>
+                      <span class="language-content en-content hidden">Welcome and skill assessment</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>14h</strong> - 
+                      <span class="language-content fr-content">Techniques de base d'escalade</span>
+                      <span class="language-content en-content hidden">Basic climbing techniques</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>17h</strong> - 
+                      <span class="language-content fr-content">Yoga restaurateur</span>
+                      <span class="language-content en-content hidden">Restorative yoga</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="p-6">
-              <ul class="space-y-3">
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>7h</strong> - 
-                    <span class="language-content fr-content">Yoga matinal</span>
-                    <span class="language-content en-content hidden">Morning yoga</span>
-                  </span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>9h</strong> - 
-                    <span class="language-content fr-content">Escalade en falaise</span>
-                    <span class="language-content en-content hidden">Rock climbing</span>
-                  </span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>16h</strong> - 
-                    <span class="language-content fr-content">Yoga restaurateur</span>
-                    <span class="language-content en-content hidden">Restorative yoga</span>
-                  </span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>20h</strong> - 
-                    <span class="language-content fr-content">Cercle de partage</span>
-                    <span class="language-content en-content hidden">Sharing circle</span>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <!-- Jour 3 -->
-          <div class="retreat-card bg-gray-50 rounded-lg overflow-hidden">
-            <div class="bg-primary text-white p-4 text-center">
-              <h3 class="font-bold">
-                <span class="language-content fr-content">Jour 3</span>
-                <span class="language-content en-content hidden">Day 3</span>
-              </h3>
+            <!-- Jour 2 -->
+            <div class="retreat-card bg-gray-50 rounded-lg overflow-hidden">
+              <div class="bg-primary text-white p-4 text-center">
+                <h3 class="font-bold">
+                  <span class="language-content fr-content">Jour 2 - Application</span>
+                  <span class="language-content en-content hidden">Day 2 - Application</span>
+                </h3>
+              </div>
+              <div class="p-6">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>7h</strong> - 
+                      <span class="language-content fr-content">Yoga dynamique</span>
+                      <span class="language-content en-content hidden">Dynamic yoga</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>9h</strong> - 
+                      <span class="language-content fr-content">Escalade en voie - techniques avancées</span>
+                      <span class="language-content en-content hidden">Route climbing - advanced techniques</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>16h</strong> - 
+                      <span class="language-content fr-content">Atelier: lecture de voie et stratégie</span>
+                      <span class="language-content en-content hidden">Workshop: route reading and strategy</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="p-6">
-              <ul class="space-y-3">
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>7h</strong> - 
-                    <span class="language-content fr-content">Méditation en pleine nature</span>
-                    <span class="language-content en-content hidden">Nature meditation</span>
-                  </span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>9h</strong> - 
-                    <span class="language-content fr-content">Dernière session d'escalade</span>
-                    <span class="language-content en-content hidden">Final climbing session</span>
-                  </span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
-                  <span>
-                    <strong>14h</strong> - 
-                    <span class="language-content fr-content">Clôture et départ</span>
-                    <span class="language-content en-content hidden">Closing and departure</span>
-                  </span>
-                </li>
-              </ul>
+
+            <!-- Jour 3 -->
+            <div class="retreat-card bg-gray-50 rounded-lg overflow-hidden">
+              <div class="bg-primary text-white p-4 text-center">
+                <h3 class="font-bold">
+                  <span class="language-content fr-content">Jour 3 - Consolidation</span>
+                  <span class="language-content en-content hidden">Day 3 - Consolidation</span>
+                </h3>
+              </div>
+              <div class="p-6">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>7h</strong> - 
+                      <span class="language-content fr-content">Méditation et yoga doux</span>
+                      <span class="language-content en-content hidden">Meditation and gentle yoga</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>9h</strong> - 
+                      <span class="language-content fr-content">Projet d'escalade personnel avec coaching</span>
+                      <span class="language-content en-content hidden">Personal climbing project with coaching</span>
+                    </span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <div class="text-primary mt-1"><i class="ri-time-line"></i></div>
+                    <span>
+                      <strong>14h</strong> - 
+                      <span class="language-content fr-content">Retour d'expérience et clôture</span>
+                      <span class="language-content en-content hidden">Feedback session and closing</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -394,25 +497,25 @@
         <!-- Highlight Section -->
         <div class="retreat-highlight p-6 rounded-lg mb-12">
           <h3 class="text-xl font-semibold text-primary mb-4">
-            <span class="language-content fr-content">Ce qui rend notre retraite unique</span>
-            <span class="language-content en-content hidden">What makes our retreat unique</span>
+            <span class="language-content fr-content">Avantages des deux formats</span>
+            <span class="language-content en-content hidden">Benefits of both formats</span>
           </h3>
           <div class="language-content fr-content">
-            <p class="mb-4">Notre approche combine l'intensité de l'escalade avec la sérénité du yoga, dans un cadre préservé qui favorise la reconnexion à soi.</p>
+            <p class="mb-4">Adaptez votre expérience à vos disponibilités et objectifs. Le format de 3 jours permet un apprentissage plus approfondi et une meilleure intégration des techniques.</p>
             <ul class="space-y-2">
-              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Ratio de 8 participants par guide pour une expérience personnalisée</span></li>
-              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Yoga adapté spécifiquement aux besoins des grimpeurs</span></li>
-              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Dîners préparés avec des produits locaux</span></li>
-              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Accès exclusif à des sites d'escalade préservés</span></li>
+              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Maximum 8 participants par professeur pour un suivi personnalisé</span></li>
+              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Yoga spécifiquement adapté aux besoins des grimpeurs</span></li>
+              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Environnement alpin inspirant avec sites d'escalade de qualité</span></li>
+              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Flexibilité pour choisir votre hébergement et restauration</span></li>
             </ul>
           </div>
           <div class="language-content en-content hidden">
-            <p class="mb-4">Our approach combines the intensity of climbing with the serenity of yoga, in a pristine setting that fosters reconnection with oneself.</p>
+            <p class="mb-4">Tailor your experience to your availability and goals. The 3-day format allows for deeper learning and better integration of techniques.</p>
             <ul class="space-y-2">
-              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Ratio of 8 participants per guide for a personalized experience</span></li>
+              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Maximum 8 participants per instructor for personalized follow-up</span></li>
               <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Yoga specifically adapted to climbers' needs</span></li>
-              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Dinners prepared with local products</span></li>
-              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Exclusive access to pristine climbing sites</span></li>
+              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Inspiring alpine environment with quality climbing sites</span></li>
+              <li class="flex items-start gap-2"><i class="ri-checkbox-circle-fill text-primary"></i> <span>Flexibility to choose your accommodation and meals</span></li>
             </ul>
           </div>
         </div>
@@ -428,29 +531,22 @@
               <li class="flex items-start gap-2">
                 <div class="text-primary mt-1"><i class="ri-check-line"></i></div>
                 <span>
-                  <span class="language-content fr-content">2 nuits en chambre partagée (option privée disponible)</span>
-                  <span class="language-content en-content hidden">2 nights in shared room (private option available)</span>
+                  <span class="language-content fr-content">Encadrement par guide diplômé (ratio 1:8 max)</span>
+                  <span class="language-content en-content hidden">Supervision by certified guide (max 1:8 ratio)</span>
                 </span>
               </li>
               <li class="flex items-start gap-2">
                 <div class="text-primary mt-1"><i class="ri-check-line"></i></div>
                 <span>
-                  <span class="language-content fr-content">Tous les repas (bio, végétariens)</span>
-                  <span class="language-content en-content hidden">All meals (organic, vegetarian)</span>
+                  <span class="language-content fr-content">Sessions de yoga et méditation quotidiennes</span>
+                  <span class="language-content en-content hidden">Daily yoga and meditation sessions</span>
                 </span>
               </li>
               <li class="flex items-start gap-2">
                 <div class="text-primary mt-1"><i class="ri-check-line"></i></div>
                 <span>
-                  <span class="language-content fr-content">Accès au sauna et espace bien-être</span>
-                  <span class="language-content en-content hidden">Access to sauna and wellness area</span>
-                </span>
-              </li>
-              <li class="flex items-start gap-2">
-                <div class="text-primary mt-1"><i class="ri-check-line"></i></div>
-                <span>
-                  <span class="language-content fr-content">Matériel d'escalade (baudrier, chaussons, casque)</span>
-                  <span class="language-content en-content hidden">Climbing equipment (harness, shoes, helmet)</span>
+                  <span class="language-content fr-content">Matériel collectif d'escalade (cordes, dégaines, etc.)</span>
+                  <span class="language-content en-content hidden">Collective climbing equipment (ropes, quickdraws, etc.)</span>
                 </span>
               </li>
             </ul>
@@ -464,29 +560,29 @@
               <li class="flex items-start gap-2">
                 <div class="text-gray-500 mt-1"><i class="ri-close-line"></i></div>
                 <span class="text-gray-700">
-                  <span class="language-content fr-content">Transport jusqu'au lieu de retraite</span>
-                  <span class="language-content en-content hidden">Transport to retreat location</span>
+                  <span class="language-content fr-content">Hébergement (nous pouvons conseiller des options)</span>
+                  <span class="language-content en-content hidden">Accommodation (we can recommend options)</span>
                 </span>
               </li>
               <li class="flex items-start gap-2">
                 <div class="text-gray-500 mt-1"><i class="ri-close-line"></i></div>
                 <span class="text-gray-700">
-                  <span class="language-content fr-content">Assurance voyage et annulation</span>
-                  <span class="language-content en-content hidden">Travel and cancellation insurance</span>
+                  <span class="language-content fr-content">Repas et organisation des repas</span>
+                  <span class="language-content en-content hidden">Meals and meal organization</span>
                 </span>
               </li>
               <li class="flex items-start gap-2">
                 <div class="text-gray-500 mt-1"><i class="ri-close-line"></i></div>
                 <span class="text-gray-700">
-                  <span class="language-content fr-content">Dépenses personnelles</span>
-                  <span class="language-content en-content hidden">Personal expenses</span>
+                  <span class="language-content fr-content">Matériel personnel d'escalade (baudrier, chaussons, casque)</span>
+                  <span class="language-content en-content hidden">Personal climbing equipment (harness, shoes, helmet)</span>
                 </span>
               </li>
               <li class="flex items-start gap-2">
                 <div class="text-gray-500 mt-1"><i class="ri-close-line"></i></div>
                 <span class="text-gray-700">
-                  <span class="language-content fr-content">Massages (option payante sur place)</span>
-                  <span class="language-content en-content hidden">Massages (paid option on site)</span>
+                  <span class="language-content fr-content">Assurance personnelle et frais de transport</span>
+                  <span class="language-content en-content hidden">Personal insurance and transport costs</span>
                 </span>
               </li>
             </ul>
@@ -501,24 +597,24 @@
           </h3>
           <div class="grid md:grid-cols-3 gap-4">
             <div class="border border-primary rounded-lg p-4 text-center">
-              <p class="font-bold text-primary">15-17 Juin 2025</p>
+              <p class="font-bold text-primary">15-16 Juin 2025</p>
               <p class="text-sm text-gray-600">
-                <span class="language-content fr-content">3 places restantes</span>
-                <span class="language-content en-content hidden">3 spots left</span>
+                <span class="language-content fr-content">2 jours - 4 places</span>
+                <span class="language-content en-content hidden">2 days - 4 spots</span>
               </p>
             </div>
             <div class="border border-primary rounded-lg p-4 text-center">
               <p class="font-bold text-primary">10-12 Août 2025</p>
               <p class="text-sm text-gray-600">
-                <span class="language-content fr-content">Complet (liste d'attente)</span>
-                <span class="language-content en-content hidden">Full (waiting list)</span>
+                <span class="language-content fr-content">3 jours - 2 places</span>
+                <span class="language-content en-content hidden">3 days - 2 spots</span>
               </p>
             </div>
             <div class="border border-primary rounded-lg p-4 text-center">
               <p class="font-bold text-primary">20-22 Septembre 2025</p>
               <p class="text-sm text-gray-600">
-                <span class="language-content fr-content">8 places disponibles</span>
-                <span class="language-content en-content hidden">8 spots available</span>
+                <span class="language-content fr-content">3 jours - 6 places</span>
+                <span class="language-content en-content hidden">3 days - 6 spots</span>
               </p>
             </div>
           </div>
@@ -561,9 +657,9 @@
             </label>
             <select id="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
               <option value="">-- Sélectionnez --</option>
-              <option value="15-17 Juin 2025">15-17 Juin 2025</option>
-              <option value="10-12 Août 2025">10-12 Août 2025 (liste d'attente)</option>
-              <option value="20-22 Septembre 2025">20-22 Septembre 2025</option>
+              <option value="15-16 Juin 2025">15-16 Juin 2025 (2 jours - CHF 550)</option>
+              <option value="10-12 Août 2025">10-12 Août 2025 (3 jours - CHF 750)</option>
+              <option value="20-22 Septembre 2025">20-22 Septembre 2025 (3 jours - CHF 750)</option>
             </select>
           </div>
           <div class="md:col-span-2">
@@ -572,7 +668,7 @@
               <span class="language-content en-content hidden">Additional information</span>
               <span class="text-sm text-gray-500">(<span id="charCount">0</span>/500)</span>
             </label>
-            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" maxlength="500" placeholder="Niveau d'escalade, restrictions alimentaires, etc."></textarea>
+            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" maxlength="500" placeholder="Niveau d'escalade, expérience en yoga, etc."></textarea>
           </div>
           <div class="md:col-span-2">
             <button type="submit" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors w-full">
@@ -694,21 +790,21 @@
         }
         
         // Mobile menu toggle
-         const mobileMenuButton = document.getElementById("mobileMenuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const mobileMenuLinks = document.querySelectorAll("#mobileMenu a"); // Selecciona todos los enlaces del menú
+        const mobileMenuButton = document.getElementById("mobileMenuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileMenuLinks = document.querySelectorAll("#mobileMenu a"); // Selecciona todos los enlaces del menú
 
-    // Abrir/cerrar menú al hacer clic en el botón ☰
-    mobileMenuButton.addEventListener("click", function () {
-      mobileMenu.classList.toggle("hidden");
-    });
+        // Abrir/cerrar menú al hacer clic en el botón ☰
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
 
-    // Cerrar menú al hacer clic en cualquier enlace
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener("click", function () {
-        mobileMenu.classList.add("hidden"); // Cierra el menú
-      });
-    });
+        // Cerrar menú al hacer clic en cualquier enlace
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden"); // Cierra el menú
+          });
+        });
         
         // Language toggle
         const languageButtons = document.querySelectorAll(".language-btn");
@@ -733,6 +829,28 @@
               frContent.forEach((el) => el.classList.remove("hidden"));
               enContent.forEach((el) => el.classList.add("hidden"));
             }
+          });
+        });
+
+        // Selector de formato (2 días / 3 días)
+        const formatButtons = document.querySelectorAll(".format-btn");
+        const formatContents = document.querySelectorAll(".format-content");
+        
+        formatButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const format = this.getAttribute("data-format");
+            // Update button styles
+            formatButtons.forEach((btn) => {
+              btn.classList.remove("active", "bg-white", "text-primary", "shadow-sm");
+              btn.classList.add("text-gray-600");
+            });
+            this.classList.add("active", "bg-white", "text-primary", "shadow-sm");
+            this.classList.remove("text-gray-600");
+            // Update content visibility
+            formatContents.forEach((content) => {
+              content.classList.add("hidden");
+            });
+            document.getElementById(`${format}-program`).classList.remove("hidden");
           });
         });
       });
