@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+          Vertical Horizons – Sur Mesure | Custom Group Activities
+        </title>
+        <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: { primary: "#2F4F4F", secondary: "#8B7355" },
+                borderRadius: {
+                  none: "0px",
+                  sm: "4px",
+                  DEFAULT: "8px",
+                  md: "12px",
+                  lg: "16px",
+                  xl: "20px",
+                  "2xl": "24px",
+                  "3xl": "32px",
+                  full: "9999px",
+                  button: "8px",
+                },
+              },
+            },
+          };
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+          rel="stylesheet"
+        />
+        <style>
+          :where([class^="ri-"])::before { content: "\f3c2"; }
+          body {
+          font-family: 'Montserrat', sans-serif;
+          }
+          .hero-section {
+          background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%), url('../img/fondo.jpg');
+          background-size: cover;
+          background-position: center;
+          }
+          .activity-card {
+          transition: all 0.3s ease;
+          }
+          .activity-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          }
+          .language-btn.active {
+          transition: all 0.3s ease;
+          }
+          .language-btn {
+          transition: all 0.3s ease;
+          }
+          .activity-card .image-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+          }
+          
+          .activity-card .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+          
+          .activity-card .image-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+          }
+          .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+          }
+          .prose h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #2F4F4F;
+          }
+          .prose h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #2F4F4F;
+          }
+        </style>
+      </head>
+    
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="../index.html" class="flex items-center gap-3">
+          <img
+            src="../img/logo.jpg"
+            alt="Vertical Horizons Logo"
+            class="w-12 h-12 rounded-full"
+          />
+          <span class="text-3xl font-['Pacifico'] text-primary"
+            >Vertical Horizons</span
+          >
+        </a>
+        <div class="flex items-center gap-8">
+          <div class="flex items-center bg-gray-100/80 rounded-full p-1">
+            <button
+              type="button"
+              class="language-btn active px-4 py-2 rounded-full bg-white text-primary font-medium shadow-sm flex items-center gap-2"
+              data-lang="fr"
+            >
+              <span class="ri-flag-line"></span>FR
+            </button>
+            <button
+              type="button"
+              class="language-btn px-4 py-2 rounded-full text-gray-600 font-medium hover:text-primary flex items-center gap-2"
+              data-lang="en"
+            >
+              <span class="ri-flag-line"></span>EN
+            </button>
+          </div>
+          <nav class="hidden md:flex items-center space-x-6">
+            <a
+              href="../a-propos.html"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >À propos / About</a
+            >
+            <a
+              href="../index.html#activities"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Activités / Activities</a
+            >
+            <a
+              href="../index.html#booking"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Réservation / Booking</a
+            >
+            <a
+              href="../index.html#contact"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </nav>
+          <button
+            class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+            id="mobileMenuButton"
+          >
+            <i class="ri-menu-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md"
+        id="mobileMenu"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+          <a
+            href="../index.html#about"
+            class="py-2 text-gray-700 hover:text-primary transition-colors"
+            >À propos / About</a
+          >
+          <a
+            href="../index.html#activities"
+            class="py-2 text-gray-700 hover:text-primary transition-colors"
+            >Activités / Activities</a
+          >
+          <a
+            href="../index.html#booking"
+            class="py-2 text-gray-700 hover:text-primary transition-colors"
+            >Réservation / Booking</a
+          >
+          <a
+            href="../index.html#contact"
+            class="py-2 text-gray-700 hover:text-primary transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+  <!-- Hero Section -->
+  <section class="hero-section min-h-[400px] flex items-center">
+    <div class="container mx-auto px-4 py-16 w-full">
+      <div class="max-w-4xl bg-white/90 p-8 rounded-lg">
+        <h1 class="text-4xl font-bold text-primary mb-6">
+          <span class="language-content fr-content">Activité Sur Mesure</span>
+          <span class="language-content en-content hidden">Custom Tailored Activity</span>
+        </h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="../img/a-la-carte.jpg"
+                alt="Activité sur mesure"
+                class="w-full h-full object-cover min-h-[300px]"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+          <div>
+            <div class="language-content fr-content">
+                <p class="text-lg mb-4">
+                    Créez l’expérience idéale pour votre groupe avec une activité complètement personnalisée, en salle ou en extérieur — ou laissez-vous simplement guider vers la découverte.
+                  </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Lieu au choix (indoor/outdoor)</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Durée adaptable</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Niveau technique ajustable</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Objectifs spécifiques</li>
+              </ul>
+            </div>
+            <div class="language-content en-content hidden">
+                <p class="text-lg mb-4">
+                    Create the perfect experience for your group with a fully personalized activity, indoors or outdoors — or simply let yourself be guided into discovery.
+                  </p>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Location of choice (indoor/outdoor)</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Flexible duration</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Adjustable difficulty level</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Specific goals</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg mb-6">
+              <p class="font-semibold text-primary mb-2">
+                <span class="language-content fr-content">À partir de CHF 250</span>
+                <span class="language-content en-content hidden">From CHF 250</span>
+              </p>
+              <p class="text-sm text-gray-600">
+                <span class="language-content fr-content">pour 3 heures (tarif groupe)</span>
+                <span class="language-content en-content hidden">for 3 hours (group rate)</span>
+              </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="../index.html#activities" 
+                class="bg-secondary text-white px-6 py-3 rounded-button font-medium hover:bg-amber-600 transition-colors inline-flex items-center justify-center gap-2 shadow-md transform hover:scale-105 transition-transform duration-200"
+              >
+                <i class="ri-arrow-left-line"></i>
+                <span class="language-content fr-content">Retour aux activités</span>
+                <span class="language-content en-content hidden">Back to activities</span>
+              </a>
+
+              <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors inline-flex items-center justify-center gap-2 shadow-md transform hover:scale-105 transition-transform duration-200">
+                <span class="language-content fr-content">Demander un devis</span>
+                <span class="language-content en-content hidden">Request a quote</span>
+                <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detalles de la actividad -->
+  <section class="py-16 bg-white" id="details">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="language-content fr-content">
+          <h2 class="text-2xl font-bold text-primary mb-6">Exemples d'Activités Possibles</h2>
+          <div class="prose">
+            <h3>1. Découverte de grandes voies</h3>
+            <ul>
+              <li>Initiation aux techniques spécifiques des voies de plusieurs longueurs</li>
+              <li>Choix de sites adaptés au niveau du groupe</li>
+              <li>Gestion du matériel et de la logistique incluse</li>
+            </ul>
+            
+            <h3>2. Session coaching technique</h3>
+            <ul>
+              <li>Atelier ciblé sur un aspect technique spécifique (dalles, dévers, etc.)</li>
+              <li>Analyse vidéo et feedback personnalisé</li>
+              <li>Exercices adaptés aux besoins du groupe</li>
+            </ul>
+            
+            <h3>3. Enchaînement de sites</h3>
+            <ul>
+              <li>Journée découverte de plusieurs falaises</li>
+              <li>Approche pédagogique et progressive</li>
+              <li>Inclut transport entre sites si nécessaire</li>
+            </ul>
+            
+            <h3>4. Préparation expédition</h3>
+            <ul>
+              <li>Programme sur mesure pour préparer un projet spécifique</li>
+              <li>Simulation des conditions réelles</li>
+              <li>Conseils sur le matériel et la préparation physique</li>
+            </ul>
+            
+            <h3>5. Team building thématique</h3>
+            <ul>
+              <li>Activité combinant escalade et objectifs d'entreprise</li>
+              <li>Défis collaboratifs en milieu vertical</li>
+              <li>Débriefing professionnel avec transfert de compétences</li>
+            </ul>
+          </div>
+          
+          <h2 class="text-2xl font-bold text-primary mt-12 mb-6">Notre Approche</h2>
+          <div class="prose">
+            <h3>1. Écoute</h3>
+            <p>Nous prenons le temps de comprendre vos objectifs, le niveau des participants et vos attentes spécifiques pour créer une activité parfaitement adaptée.</p>
+            
+            <h3>2. Conception</h3>
+            <p>Notre équipe conçoit un programme sur mesure avec des objectifs clairs et un déroulé adapté à votre groupe.</p>
+            
+            <h3>3. Logistique</h3>
+            <p>Nous gérons tout l'aspect pratique : réservation des sites, autorisations nécessaires, matériel technique et sécurité.</p>
+            
+            <h3>4. Animation</h3>
+            <p>Nos guides diplômés encadrent l'activité avec professionnalisme tout en garantissant une ambiance conviviale.</p>
+          </div>
+        </div>
+        
+        <div class="language-content en-content hidden">
+          <h2 class="text-2xl font-bold text-primary mb-6">Possible Activities Examples</h2>
+          <div class="prose">
+            <h3>1. Multi-pitch discovery</h3>
+            <ul>
+              <li>Introduction to specific techniques for multi-pitch routes</li>
+              <li>Sites selection adapted to group level</li>
+              <li>Equipment and logistics management included</li>
+            </ul>
+            
+            <h3>2. Technical coaching session</h3>
+            <ul>
+              <li>Workshop focused on specific techniques (slabs, overhangs, etc.)</li>
+              <li>Video analysis and personalized feedback</li>
+              <li>Exercises adapted to group needs</li>
+            </ul>
+            
+            <h3>3. Multiple sites tour</h3>
+            <ul>
+              <li>Discovery day across several climbing areas</li>
+              <li>Pedagogical and progressive approach</li>
+              <li>Includes transportation between sites if needed</li>
+            </ul>
+            
+            <h3>4. Expedition preparation</h3>
+            <ul>
+              <li>Custom program for specific project preparation</li>
+              <li>Real conditions simulation</li>
+              <li>Advice on equipment and physical preparation</li>
+            </ul>
+            
+            <h3>5. Thematic team building</h3>
+            <ul>
+              <li>Activity combining climbing and business objectives</li>
+              <li>Collaborative challenges in vertical environment</li>
+              <li>Professional debriefing with skills transfer</li>
+            </ul>
+          </div>
+          
+          <h2 class="text-2xl font-bold text-primary mt-12 mb-6">Our Approach</h2>
+          <div class="prose">
+            <h3>1. Listening</h3>
+            <p>We take time to understand your goals, participants' level and specific expectations to create a perfectly tailored activity.</p>
+            
+            <h3>2. Design</h3>
+            <p>Our team designs a custom program with clear objectives and schedule adapted to your group.</p>
+            
+            <h3>3. Logistics</h3>
+            <p>We handle all practical aspects: sites booking, necessary authorizations, technical equipment and safety.</p>
+            
+            <h3>4. Facilitation</h3>
+            <p>Our certified guides supervise the activity professionally while ensuring a friendly atmosphere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-primary mb-6">
+          <span class="language-content fr-content">Contactez-nous pour créer votre activité</span>
+          <span class="language-content en-content hidden">Contact us to create your activity</span>
+        </h2>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Nom complet</span>
+              <span class="language-content en-content hidden">Full name</span>
+            </label>
+            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 mb-2">Email</label>
+            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="phone" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Téléphone</span>
+              <span class="language-content en-content hidden">Phone</span>
+            </label>
+            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="company" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Entreprise/Groupe</span>
+              <span class="language-content en-content hidden">Company/Group</span>
+            </label>
+            <input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="participants" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Nombre de participants</span>
+              <span class="language-content en-content hidden">Number of participants</span>
+            </label>
+            <input type="number" id="participants" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="date" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Date souhaitée</span>
+              <span class="language-content en-content hidden">Preferred date</span>
+            </label>
+            <input type="date" id="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div class="md:col-span-2">
+            <label for="message" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Décrivez votre projet</span>
+              <span class="language-content en-content hidden">Describe your project</span>
+            </label>
+            <textarea id="message" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
+          </div>
+          <div class="md:col-span-2">
+            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors w-full">
+              <span class="language-content fr-content">Envoyer la demande</span>
+              <span class="language-content en-content hidden">Send request</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Columna 1: Logo y redes -->
+          <div>
+            <a href="../index.html" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Vertical Horizons</a>
+            <p class="text-gray-400 mb-6">
+              <span class="language-content fr-content">Votre partenaire d'escalade en Suisse</span>
+              <span class="language-content en-content hidden">Your climbing partner in Switzerland</span>
+            </p>
+            <div class="flex space-x-4">
+              <a href="https://www.instagram.com/verticalhorizons.ch/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-instagram-line ri-lg"></i>
+              </a>
+              <a href="https://www.facebook.com/Verticalhorizons.ch" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-facebook-line ri-lg"></i>
+              </a>
+              <a href="https://wa.me/41764969463" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-whatsapp-line ri-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Enlaces rápidos -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">
+              <span class="language-content fr-content">Accès rapide</span>
+              <span class="language-content en-content hidden">Quick Links</span>
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="../index.html#about" class="text-gray-400 hover:text-white transition-colors">
+                  <span class="language-content fr-content">À propos</span>
+                  <span class="language-content en-content hidden">About</span>
+                </a>
+              </li>
+              <li>
+                <a href="../index.html#activities" class="text-gray-400 hover:text-white transition-colors">
+                  <span class="language-content fr-content">Activités</span>
+                  <span class="language-content en-content hidden">Activities</span>
+                </a>
+              </li>
+              <li>
+                <a href="../index.html#contact" class="text-gray-400 hover:text-white transition-colors">
+                  <span class="language-content fr-content">Contact</span>
+                  <span class="language-content en-content hidden">Contact</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Contacto -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">
+              <span class="language-content fr-content">Nous contacter</span>
+              <span class="language-content en-content hidden">Contact Us</span>
+            </h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-center gap-2">
+                <i class="ri-map-pin-line"></i>
+                Ollon, Suisse
+              </li>
+              <li class="flex items-center gap-2">
+                <a href="mailto:contact@verticalhorizons.ch" class="hover:text-white transition-colors">
+                  <i class="ri-mail-line"></i>
+                  contact@verticalhorizons.ch
+                </a>
+              </li>
+              <li class="flex items-center gap-2">
+                <a href="https://wa.me/41764969463" target="_blank" class="hover:text-white transition-colors">
+                  <i class="ri-phone-line"></i>
+                  +41 76 496 94 63
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea legal discreta -->
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+          <p>
+            &copy; 2025 Vertical Horizons. 
+            <a href="../conditions.html" class="hover:text-white transition-colors">
+              <span class="language-content fr-content">Conditions légales</span>
+              <span class="language-content en-content hidden">Terms & Conditions</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+         const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuLinks = document.querySelectorAll("#mobileMenu a"); // Selecciona todos los enlaces del menú
+
+    // Abrir/cerrar menú al hacer clic en el botón ☰
+    mobileMenuButton.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Cerrar menú al hacer clic en cualquier enlace
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.add("hidden"); // Cierra el menú
+      });
+    });
+        
+        // Language toggle
+        const languageButtons = document.querySelectorAll(".language-btn");
+        const frContent = document.querySelectorAll(".fr-content");
+        const enContent = document.querySelectorAll(".en-content");
+        
+        languageButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const lang = this.getAttribute("data-lang");
+            // Update button styles
+            languageButtons.forEach((btn) => {
+              btn.classList.remove("active", "bg-white", "text-primary", "shadow-sm");
+              btn.classList.add("text-gray-600");
+            });
+            this.classList.add("active", "bg-white", "text-primary", "shadow-sm");
+            this.classList.remove("text-gray-600");
+            // Update content visibility
+            if (lang === "en") {
+              frContent.forEach((el) => el.classList.add("hidden"));
+              enContent.forEach((el) => el.classList.remove("hidden"));
+            } else {
+              frContent.forEach((el) => el.classList.remove("hidden"));
+              enContent.forEach((el) => el.classList.add("hidden"));
+            }
+          });
+        });
+      });
+    </script>
+</body>
+</html>

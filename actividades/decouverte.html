@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Vertical Horizons – Découverte Outdoor | Outdoor Discovery Sessions
+    </title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#2F4F4F", secondary: "#8B7355" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Montserrat', sans-serif;
+      }
+      .hero-section {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%), url('../img/fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      }
+      .activity-card {
+      transition: all 0.3s ease;
+      }
+      .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .language-btn.active {
+      transition: all 0.3s ease;
+      }
+      .language-btn {
+      transition: all 0.3s ease;
+      }
+      .activity-card .image-container {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+      
+      .activity-card .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      
+      .activity-card .image-container::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+      }
+      .prose ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .prose h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #2F4F4F;
+      }
+      .prose h4 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        color: #2F4F4F;
+      }
+    </style>
+  </head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="/index.html" class="flex items-center gap-3">
+          <img
+            src="../img/logo.jpg"
+            alt="Vertical Horizons Logo"
+            class="w-12 h-12 rounded-full"
+          />
+          <span class="text-3xl font-['Pacifico'] text-primary"
+            >Vertical Horizons</span
+          >
+        </a>
+        <div class="flex items-center gap-8">
+          <div class="flex items-center bg-gray-100/80 rounded-full p-1">
+            <button
+              type="button"
+              class="language-btn active px-4 py-2 rounded-full bg-white text-primary font-medium shadow-sm flex items-center gap-2"
+              data-lang="fr"
+            >
+              <span class="ri-flag-line"></span>FR
+            </button>
+            <button
+              type="button"
+              class="language-btn px-4 py-2 rounded-full text-gray-600 font-medium hover:text-primary flex items-center gap-2"
+              data-lang="en"
+            >
+              <span class="ri-flag-line"></span>EN
+            </button>
+          </div>
+          <nav class="hidden md:flex items-center space-x-6">
+            <a
+              href="../a-propos.html"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >À propos / About</a
+            >
+            <a
+              href="/index.html#activities"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Activités / Activities</a
+            >
+            <a
+              href="/index.html#booking"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Réservation / Booking</a
+            >
+            <a
+              href="/index.html#contact"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </nav>
+          <button
+            class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+            id="mobileMenuButton"
+          >
+            <i class="ri-menu-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md"
+        id="mobileMenu"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+          <a
+            href="../a-propos.html"
+            class="py-2 text-gray-700 hover:text-primary transition-colors"
+            >À propos / About</a
+          >
+          <a
+            href="/index.html#activities"
+            class="py-2 text-gray-700 hover:text-primary transition-colors"
+            >Activités / Activities</a
+          >
+          <a
+            href="/index.html#booking"
+            class="py-2 text-gray-700 hover:text-primary transition-colors"
+            >Réservation / Booking</a
+          >
+          <a
+            href="/index.html#contact"
+            class="py-2 text-gray-700 hover:text-primary transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+  <!-- Hero Section -->
+  <section class="hero-section min-h-[400px] flex items-center">
+    <div class="container mx-auto px-4 py-16 w-full">
+      <div class="max-w-4xl bg-white/90 p-8 rounded-lg">
+        <h1 class="text-4xl font-bold text-primary mb-6">
+          <span class="language-content fr-content">Découverte Outdoor</span>
+          <span class="language-content en-content hidden">Outdoor Discovery</span>
+        </h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="../img/decouverte.jpg"
+                alt="Session découverte en falaise"
+                class="w-full h-full object-cover min-h-[300px]"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+          <div>
+            <div class="language-content fr-content">
+              <p class="text-lg mb-4">Initiation à l'escalade en extérieur pour découvrir les sensations uniques de grimper sur du vrai rocher, encadrée par un professionnel.</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Demi-journée (4 heures)</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Sites adaptés aux débutants</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Matériel fourni</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Approche de l'environnement naturel</li>
+              </ul>
+            </div>
+            <div class="language-content en-content hidden">
+              <p class="text-lg mb-4">Outdoor climbing initiation to discover the unique sensations of climbing on real rock, supervised by a professional.</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Half-day (4 hours)</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Beginner-friendly sites</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Equipment provided</li>
+                <li class="flex items-center gap-2"><i class="ri-check-line text-primary"></i> Natural environment approach</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg mb-6">
+              <p class="font-semibold text-primary mb-2">
+                <span class="language-content fr-content">CHF 160</span>
+                <span class="language-content en-content hidden">CHF 160</span>
+              </p>
+              <p class="text-sm text-gray-600">
+                <span class="language-content fr-content">par personne (groupe de 2-4 personnes)</span>
+                <span class="language-content en-content hidden">per person (group of 2-4 people)</span>
+              </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="/index.html#activities" 
+                class="bg-secondary text-white px-6 py-3 rounded-button font-medium hover:bg-amber-600 transition-colors inline-flex items-center justify-center gap-2 shadow-md transform hover:scale-105 transition-transform duration-200"
+              >
+                <i class="ri-arrow-left-line"></i>
+                <span class="language-content fr-content">Retour aux activités</span>
+                <span class="language-content en-content hidden">Back to activities</span>
+              </a>
+
+              <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors inline-flex items-center justify-center gap-2 shadow-md transform hover:scale-105 transition-transform duration-200">
+                <span class="language-content fr-content">Réserver maintenant</span>
+                <span class="language-content en-content hidden">Book Now</span>
+                <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detalles de la actividad -->
+  <section class="py-16 bg-white" id="details">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="language-content fr-content">
+          <h2 class="text-2xl font-bold text-primary mb-6">Déroulement de la Session</h2>
+          <div class="prose">
+            <h3>1. Préparation et équipement</h3>
+            <ul>
+              <li>Briefing sur le déroulement de la journée</li>
+              <li>Choix et ajustement du matériel (baudrier, casque, chaussons)</li>
+              <li>Explication des règles de sécurité en extérieur</li>
+              <li>Présentation du site et de ses caractéristiques</li>
+            </ul>
+            
+            <h3>2. Techniques de base</h3>
+            <ul>
+              <li>Positionnement du corps sur le rocher naturel</li>
+              <li>Utilisation des prises naturelles (réglettes, trous, gratons)</li>
+              <li>Gestion de l'équilibre et du poids du corps</li>
+              <li>Techniques de descente et de repos</li>
+            </ul>
+            
+            <h3>3. Grimpe encadrée</h3>
+            <ul>
+              <li>Plusieurs voies adaptées au niveau des participants</li>
+              <li>Consignes personnalisées pendant la grimpe</li>
+              <li>Feedback immédiat pour améliorer la technique</li>
+              <li>Découverte des différentes sensations (adhérence, appuis)</li>
+            </ul>
+            
+            <h3>4. Environnement naturel</h3>
+            <ul>
+              <li>Respect de la faune et de la flore environnante</li>
+              <li>Conscience de l'impact environnemental</li>
+              <li>Histoire géologique du site</li>
+              <li>Éthique de l'escalade outdoor</li>
+            </ul>
+            
+            <h3>5. Sécurité et prévention</h3>
+            <ul>
+              <li>Vérifications systématiques du matériel</li>
+              <li>Communication claire entre grimpeur et assureur</li>
+              <li>Gestion des risques spécifiques à l'extérieur</li>
+              <li>Protocoles en cas d'urgence</li>
+            </ul>
+            
+            <h3>Informations pratiques</h3>
+            <ul>
+              <li>Âge minimum : 12 ans (accompagné d'un adulte)</li>
+              <li>Condition physique normale requise</li>
+              <li>Tenue adaptée aux conditions météo</li>
+              <li>Chaussures de marche recommandées pour l'approche</li>
+              <li>Lieux : Falaises Suisse romande ou selon accord</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="language-content en-content hidden">
+          <h2 class="text-2xl font-bold text-primary mb-6">Session Details</h2>
+          <div class="prose">
+            <h3>1. Preparation and equipment</h3>
+            <ul>
+              <li>Briefing about the day's schedule</li>
+              <li>Selection and adjustment of equipment (harness, helmet, shoes)</li>
+              <li>Explanation of outdoor safety rules</li>
+              <li>Presentation of the site and its characteristics</li>
+            </ul>
+            
+            <h3>2. Basic techniques</h3>
+            <ul>
+              <li>Body positioning on natural rock</li>
+              <li>Using natural holds (edges, pockets, slopers)</li>
+              <li>Balance and body weight management</li>
+              <li>Descent and resting techniques</li>
+            </ul>
+            
+            <h3>3. Supervised climbing</h3>
+            <ul>
+              <li>Several routes adapted to participants' level</li>
+              <li>Personalized instructions during climbing</li>
+              <li>Immediate feedback to improve technique</li>
+              <li>Discovery of different sensations (friction, footwork)</li>
+            </ul>
+            
+            <h3>4. Natural environment</h3>
+            <ul>
+              <li>Respect for surrounding wildlife and vegetation</li>
+              <li>Awareness of environmental impact</li>
+              <li>Geological history of the site</li>
+              <li>Outdoor climbing ethics</li>
+            </ul>
+            
+            <h3>5. Safety and prevention</h3>
+            <ul>
+              <li>Systematic equipment checks</li>
+              <li>Clear communication between climber and belayer</li>
+              <li>Management of outdoor-specific risks</li>
+              <li>Emergency protocols</li>
+            </ul>
+            
+            <h3>Practical information</h3>
+            <ul>
+              <li>Minimum age: 12 years (accompanied by an adult)</li>
+              <li>Normal physical condition required</li>
+              <li>Clothing adapted to weather conditions</li>
+              <li>Hiking shoes recommended for the approach</li>
+              <li>Locations: Switzerland cliffs or by agreement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="py-16 bg-gray-50" id="contact">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-primary mb-6">
+          <span class="language-content fr-content">Contactez-nous pour réserver</span>
+          <span class="language-content en-content hidden">Contact us to book</span>
+        </h2>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Nom complet</span>
+              <span class="language-content en-content hidden">Full name</span>
+            </label>
+            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 mb-2">Email</label>
+            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="phone" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Téléphone</span>
+              <span class="language-content en-content hidden">Phone</span>
+            </label>
+            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="date" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Date souhaitée</span>
+              <span class="language-content en-content hidden">Preferred date</span>
+            </label>
+            <input type="date" id="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div class="md:col-span-2">
+            <label for="message" class="block text-gray-700 mb-2">
+              <span class="language-content fr-content">Message</span>
+              <span class="language-content en-content hidden">Message</span>
+              <span class="text-sm text-gray-500">(<span id="charCount">0</span>/500)</span>
+            </label>
+            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" maxlength="500"></textarea>
+          </div>
+          <div class="md:col-span-2">
+            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors">
+              <span class="language-content fr-content">Envoyer la demande</span>
+              <span class="language-content en-content hidden">Send request</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Columna 1: Logo y redes -->
+          <div>
+            <a href="/index.html" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Vertical Horizons</a>
+            <p class="text-gray-400 mb-6">
+              <span class="language-content fr-content">Votre partenaire d'escalade en Suisse</span>
+              <span class="language-content en-content hidden">Your climbing partner in Switzerland</span>
+            </p>
+            <div class="flex space-x-4">
+              <a href="https://www.instagram.com/verticalhorizons.ch/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-instagram-line ri-lg"></i>
+              </a>
+              <a href="https://www.facebook.com/Verticalhorizons.ch" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-facebook-line ri-lg"></i>
+              </a>
+              <a href="https://wa.me/41764969463" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                <i class="ri-whatsapp-line ri-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Enlaces rápidos -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">
+              <span class="language-content fr-content">Accès rapide</span>
+              <span class="language-content en-content hidden">Quick Links</span>
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="../a-propos.html" class="text-gray-400 hover:text-white transition-colors">
+                  <span class="language-content fr-content">À propos</span>
+                  <span class="language-content en-content hidden">About</span>
+                </a>
+              </li>
+              <li>
+                <a href="/index.html#activities" class="text-gray-400 hover:text-white transition-colors">
+                  <span class="language-content fr-content">Activités</span>
+                  <span class="language-content en-content hidden">Activities</span>
+                </a>
+              </li>
+              <li>
+                <a href="/index.html#contact" class="text-gray-400 hover:text-white transition-colors">
+                  <span class="language-content fr-content">Contact</span>
+                  <span class="language-content en-content hidden">Contact</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Contacto -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">
+              <span class="language-content fr-content">Nous contacter</span>
+              <span class="language-content en-content hidden">Contact Us</span>
+            </h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-center gap-2">
+                <i class="ri-map-pin-line"></i>
+                Ollon, Suisse
+              </li>
+              <li class="flex items-center gap-2">
+                <a href="mailto:contact@verticalhorizons.ch" class="hover:text-white transition-colors">
+                  <i class="ri-mail-line"></i>
+                  contact@verticalhorizons.ch
+                </a>
+              </li>
+              <li class="flex items-center gap-2">
+                <a href="https://wa.me/41764969463" target="_blank" class="hover:text-white transition-colors">
+                  <i class="ri-phone-line"></i>
+                  +41 76 496 94 63
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea legal discreta -->
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+          <p>
+            &copy; 2025 Vertical Horizons. 
+            <a href="/conditions.html" class="hover:text-white transition-colors">
+              <span class="language-content fr-content">Conditions légales</span>
+              <span class="language-content en-content hidden">Terms & Conditions</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Character counter for message
+        const messageTextarea = document.getElementById("message");
+        const charCountSpan = document.getElementById("charCount");
+        if (messageTextarea && charCountSpan) {
+          messageTextarea.addEventListener("input", function () {
+            const currentLength = this.value.length;
+            charCountSpan.textContent = currentLength;
+            if (currentLength >= 450) {
+              charCountSpan.classList.add("text-orange-500");
+            } else {
+              charCountSpan.classList.remove("text-orange-500");
+            }
+          });
+        }
+        
+        // Mobile menu toggle
+         const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuLinks = document.querySelectorAll("#mobileMenu a"); // Selecciona todos los enlaces del menú
+
+    // Abrir/cerrar menú al hacer clic en el botón ☰
+    mobileMenuButton.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Cerrar menú al hacer clic en cualquier enlace
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.add("hidden"); // Cierra el menú
+      });
+    });
+        
+        // Language toggle
+        const languageButtons = document.querySelectorAll(".language-btn");
+        const frContent = document.querySelectorAll(".fr-content");
+        const enContent = document.querySelectorAll(".en-content");
+        
+        languageButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const lang = this.getAttribute("data-lang");
+            // Update button styles
+            languageButtons.forEach((btn) => {
+              btn.classList.remove("active", "bg-white", "text-primary", "shadow-sm");
+              btn.classList.add("text-gray-600");
+            });
+            this.classList.add("active", "bg-white", "text-primary", "shadow-sm");
+            this.classList.remove("text-gray-600");
+            // Update content visibility
+            if (lang === "en") {
+              frContent.forEach((el) => el.classList.add("hidden"));
+              enContent.forEach((el) => el.classList.remove("hidden"));
+            } else {
+              frContent.forEach((el) => el.classList.remove("hidden"));
+              enContent.forEach((el) => el.classList.add("hidden"));
+            }
+          });
+        });
+      });
+    </script>
+</body>
+</html>
