@@ -885,10 +885,6 @@
                 <span class="language-content fr-content">Merci! Votre message a été envoyé.</span>
                 <span class="language-content en-content hidden">Thank you! Your message has been sent.</span>
               </div>
-              <div id="formError" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded">
-                <span class="language-content fr-content">Erreur: le message n'a pas pu être envoyé.</span>
-                <span class="language-content en-content hidden">Error: the message could not be sent.</span>
-              </div>
             </form>
           </div>
         </div>
@@ -1004,31 +1000,13 @@
             body: new FormData(form),
             headers: { 'Accept': 'application/json' }
           });
-
-          let data = null;
-          try { data = await response.json(); } catch (e) { /* ignore non-json */ }
-
+    
           if (response.ok) {
             form.reset();
             confirmation.classList.remove('hidden');
             setTimeout(() => confirmation.classList.add('hidden'), 5000);
-          } else {
-            const errorDiv = document.getElementById('formError');
-            let msg = (data && (data.error || (data.errors && data.errors.map(e => e.message).join(', ')))) || null;
-            if (!msg) {
-              msg = 'There was an error sending your message. Please try again later.';
-            }
-            // show message text inside the error div (replace english/fr if present)
-            errorDiv.textContent = msg;
-            errorDiv.classList.remove('hidden');
-            setTimeout(() => errorDiv.classList.add('hidden'), 7000);
-            console.warn('Form submission error:', response.status, data);
           }
         } catch (error) {
-          const errorDiv = document.getElementById('formError');
-          errorDiv.textContent = 'Network error: could not send message.';
-          errorDiv.classList.remove('hidden');
-          setTimeout(() => errorDiv.classList.add('hidden'), 7000);
           console.error('Error:', error);
         } finally {
           submitButton.innerHTML = `
