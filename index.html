@@ -988,6 +988,7 @@
     
         // Mostrar estado de carga
         submitButton.disabled = true;
+        const originalHTML = submitButton.innerHTML;
         submitButton.innerHTML = `
           <i class="ri-loader-4-line ri-lg animate-spin"></i>
           <span class="language-content fr-content">Envoi en cours...</span>
@@ -1005,15 +1006,19 @@
             form.reset();
             confirmation.classList.remove('hidden');
             setTimeout(() => confirmation.classList.add('hidden'), 5000);
+            submitButton.innerHTML = originalHTML;
+            submitButton.disabled = false;
+          } else {
+            throw new Error('Form submission failed');
           }
         } catch (error) {
           console.error('Error:', error);
-        } finally {
-          submitButton.innerHTML = `
-            <span class="language-content fr-content">Envoyer le message</span>
-            <span class="language-content en-content hidden">Send message</span>
-          `;
+          submitButton.innerHTML = originalHTML;
           submitButton.disabled = false;
+          // Fallback: submit form traditionally
+          setTimeout(() => {
+            form.submit();
+          }, 500);
         }
       });
     </script>
